@@ -6,7 +6,7 @@
 #### Usage
 Simply install the programm <br>
 It will run as a taskbar app <br>
-If you right click the icon, and hover over options, you can make changes to some settings like the default key. <br>
+If you right click the icon, and hover over options, you can make changes to some settings like the default key <br>
 For now, copy you phone number (Ctrl+C) and simply press the configured hotkey <br>
 A form will show up with you copyed number <br>
 Hit Call now
