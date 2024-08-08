@@ -88,13 +88,7 @@ namespace TeamsCallApp
         {
             notifyIcon1.ContextMenuStrip = contextMenuStrip1;
 
-            if (e.Button == MouseButtons.Left)
-            {
-                notifyIcon1.Visible = false;
-                Show();
-                this.WindowState = FormWindowState.Normal;
-            }
-            else if (e.Button == MouseButtons.Right)
+            if (e.Button == MouseButtons.Right)
             {
                 notifyIcon1.ContextMenuStrip.Show(new Point(Cursor.Position.X + 1, Cursor.Position.Y));
             }
