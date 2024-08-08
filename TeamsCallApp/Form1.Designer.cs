@@ -44,7 +44,6 @@
             showToolStripMenuItem.Name = "showToolStripMenuItem";
             showToolStripMenuItem.Size = new Size(116, 22);
             showToolStripMenuItem.Text = "Options";
-            showToolStripMenuItem.Click += showToolStripMenuItem_Click;
             // 
             // openSettingsToolStripMenuItem
             // 

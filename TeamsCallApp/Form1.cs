@@ -63,13 +63,6 @@ namespace TeamsCallApp
             return Clipboard.GetText();  // Simplified for demonstration
         }
 
-        private void showToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Show();
-            this.WindowState = FormWindowState.Normal;
-            notifyIcon1.Visible = false;
-        }
-
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             notifyIcon1.Visible = false;
