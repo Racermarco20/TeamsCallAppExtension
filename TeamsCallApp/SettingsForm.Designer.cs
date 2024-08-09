@@ -6,6 +6,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxHotkey;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.CheckBox checkBoxStartWithWindows;
+        private System.Windows.Forms.TextBox textBoxCallApp;
+        private System.Windows.Forms.CheckBox checkBoxEnableNotifications;
+        private System.Windows.Forms.Label labelCallApp;
+        private System.Windows.Forms.Label labelNotifications;
 
         protected override void Dispose(bool disposing)
         {
@@ -18,48 +23,102 @@
 
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxHotkey = new System.Windows.Forms.TextBox();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label1 = new Label();
+            textBoxHotkey = new TextBox();
+            buttonSave = new Button();
+            checkBoxStartWithWindows = new CheckBox();
+            textBoxCallApp = new TextBox();
+            checkBoxEnableNotifications = new CheckBox();
+            labelCallApp = new Label();
+            labelNotifications = new Label();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Capture Hotkey";
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 15);
+            label1.Name = "label1";
+            label1.Size = new Size(90, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Capture Hotkey";
             // 
             // textBoxHotkey
             // 
-            this.textBoxHotkey.Location = new System.Drawing.Point(102, 12);
-            this.textBoxHotkey.Name = "textBoxHotkey";
-            this.textBoxHotkey.Size = new System.Drawing.Size(100, 23);
-            this.textBoxHotkey.TabIndex = 1;
+            textBoxHotkey.Location = new Point(102, 12);
+            textBoxHotkey.Name = "textBoxHotkey";
+            textBoxHotkey.Size = new Size(100, 23);
+            textBoxHotkey.TabIndex = 1;
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(102, 41);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(100, 23);
-            this.buttonSave.TabIndex = 2;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            buttonSave.Location = new Point(102, 160);
+            buttonSave.Name = "buttonSave";
+            buttonSave.Size = new Size(100, 23);
+            buttonSave.TabIndex = 9;
+            buttonSave.Text = "Save";
+            buttonSave.UseVisualStyleBackColor = true;
+            buttonSave.Click += buttonSave_Click;
+            // 
+            // checkBoxStartWithWindows
+            // 
+            checkBoxStartWithWindows.AutoSize = true;
+            checkBoxStartWithWindows.Location = new Point(12, 41);
+            checkBoxStartWithWindows.Name = "checkBoxStartWithWindows";
+            checkBoxStartWithWindows.Size = new Size(128, 19);
+            checkBoxStartWithWindows.TabIndex = 2;
+            checkBoxStartWithWindows.Text = "Start with Windows";
+            checkBoxStartWithWindows.UseVisualStyleBackColor = true;
+            // 
+            // textBoxCallApp
+            // 
+            textBoxCallApp.Location = new Point(102, 63);
+            textBoxCallApp.Name = "textBoxCallApp";
+            textBoxCallApp.Size = new Size(100, 23);
+            textBoxCallApp.TabIndex = 6;
+            // 
+            // checkBoxEnableNotifications
+            // 
+            checkBoxEnableNotifications.AutoSize = true;
+            checkBoxEnableNotifications.Location = new Point(102, 92);
+            checkBoxEnableNotifications.Name = "checkBoxEnableNotifications";
+            checkBoxEnableNotifications.Size = new Size(61, 19);
+            checkBoxEnableNotifications.TabIndex = 8;
+            checkBoxEnableNotifications.Text = "Enable";
+            checkBoxEnableNotifications.UseVisualStyleBackColor = true;
+            // 
+            // labelCallApp
+            // 
+            labelCallApp.AutoSize = true;
+            labelCallApp.Location = new Point(12, 63);
+            labelCallApp.Name = "labelCallApp";
+            labelCallApp.Size = new Size(81, 15);
+            labelCallApp.TabIndex = 5;
+            labelCallApp.Text = "Call App (URI)";
+            // 
+            // labelNotifications
+            // 
+            labelNotifications.AutoSize = true;
+            labelNotifications.Location = new Point(12, 91);
+            labelNotifications.Name = "labelNotifications";
+            labelNotifications.Size = new Size(75, 15);
+            labelNotifications.TabIndex = 7;
+            labelNotifications.Text = "Notifications";
             // 
             // SettingsForm
             // 
-            this.ClientSize = new System.Drawing.Size(214, 76);
-            this.Controls.Add(this.buttonSave);
-            this.Controls.Add(this.textBoxHotkey);
-            this.Controls.Add(this.label1);
-            this.Name = "SettingsForm";
-            this.Text = "Settings";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            ClientSize = new Size(214, 195);
+            Controls.Add(buttonSave);
+            Controls.Add(checkBoxEnableNotifications);
+            Controls.Add(labelNotifications);
+            Controls.Add(textBoxCallApp);
+            Controls.Add(labelCallApp);
+            Controls.Add(checkBoxStartWithWindows);
+            Controls.Add(textBoxHotkey);
+            Controls.Add(label1);
+            Name = "SettingsForm";
+            Text = "Settings";
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

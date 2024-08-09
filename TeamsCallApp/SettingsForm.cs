@@ -6,12 +6,20 @@ namespace TeamsCallApp
     public partial class SettingsForm : Form
     {
         public Keys CaptureHotkey { get; private set; }
+        public bool StartWithWindows { get; private set; }
+        public string DefaultDialingPrefix { get; private set; }
+        public string DefaultCallApp { get; private set; }
+        public bool EnableNotifications { get; private set; }
 
-        public SettingsForm(Keys currentHotkey)
+        public SettingsForm(Keys currentHotkey, bool startWithWindows, string callApp, bool notifications)
         {
             InitializeComponent();
             CaptureHotkey = currentHotkey;
             textBoxHotkey.Text = CaptureHotkey.ToString();
+
+            checkBoxStartWithWindows.Checked = startWithWindows;
+            textBoxCallApp.Text = callApp;
+            checkBoxEnableNotifications.Checked = notifications;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -19,6 +27,10 @@ namespace TeamsCallApp
             if (Enum.TryParse(textBoxHotkey.Text, true, out Keys newHotkey))
             {
                 CaptureHotkey = newHotkey;
+                StartWithWindows = checkBoxStartWithWindows.Checked;
+                DefaultCallApp = textBoxCallApp.Text;
+                EnableNotifications = checkBoxEnableNotifications.Checked;
+
                 DialogResult = DialogResult.OK;
                 Close();
             }
