@@ -20,6 +20,7 @@ namespace TeamsCallApp
             checkBoxStartWithWindows.Checked = startWithWindows;
             textBoxCallApp.Text = callApp;
             checkBoxEnableNotifications.Checked = notifications;
+
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
