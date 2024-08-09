@@ -1,7 +1,7 @@
 # Teams Call Extension
 
 ## Version
-### 1.0.0
+### 1.0.1
 
 #### Usage
 Simply install the programm <br>

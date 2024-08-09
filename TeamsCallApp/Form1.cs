@@ -17,9 +17,13 @@ namespace TeamsCallApp
         {
             InitializeComponent();
             this.SizeChanged += Form1_Resize;
-            RegisterHotKey(this.Handle, HOTKEY_ID, 0, (int)currentHotkey);
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
+
+            notifyIcon1.ContextMenuStrip = contextMenuStrip1;
+            notifyIcon1.Visible = true;
+
+            RegisterHotKey(this.Handle, HOTKEY_ID, 0, (int)currentHotkey);
         }
 
         private void Form1_Resize(object sender, EventArgs e)
@@ -60,7 +64,7 @@ namespace TeamsCallApp
 
         private string GetSelectedText()
         {
-            return Clipboard.GetText();  // Simplified for demonstration
+            return Clipboard.GetText();  // TODO: Change to marked text (global)!
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -86,11 +90,17 @@ namespace TeamsCallApp
 
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            notifyIcon1.ContextMenuStrip = contextMenuStrip1;
+            if (e.Button == MouseButtons.Left)
+            {
+                notifyIcon1.Visible = true;
+            }
+        }
 
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
             if (e.Button == MouseButtons.Right)
             {
-                notifyIcon1.ContextMenuStrip.Show(new Point(Cursor.Position.X + 1, Cursor.Position.Y));
+                notifyIcon1.ContextMenuStrip.Show(Cursor.Position);
             }
         }
 
@@ -98,6 +108,8 @@ namespace TeamsCallApp
         {
             notifyIcon1.Visible = true;
             this.Hide();
+
+            RegisterHotKey(this.Handle, HOTKEY_ID, 0, (int)currentHotkey);
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
