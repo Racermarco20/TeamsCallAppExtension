@@ -1,23 +1,34 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWindowsForms>true</UseWindowsForms>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>resources\microsoft_teams_icon_137398.ico</ApplicationIcon>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<ApplicationIcon>resources\microsoft_teams_icon_137398.ico</ApplicationIcon>
+		<ApplicationManifest>app.manifest</ApplicationManifest>
 
-  <ItemGroup>
-    <Content Include="resources\microsoft_teams_icon_137398.ico" />
-  </ItemGroup>
+		<!-- Assembly Information -->
+		<GenerateAssemblyCopyrightAttribute>true</GenerateAssemblyCopyrightAttribute>
+		<AssemblyTitle>TeamsCallExtension-App</AssemblyTitle>
+		<AssemblyDescription>Lets you call a phone number with teams without needing to go into teams!</AssemblyDescription>
+		<Company>R4C</Company>
+		<Product>TeamsCallExtension</Product>
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<!--AssemblyCopyright>© 2024 R4C. All rights reserved.</AssemblyCopyright-->
+		<!--Generated in Properties/AssemblyInfo.cs-->
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Azure.Identity" Version="1.13.0-beta.1" />
-    <PackageReference Include="Microsoft.Graph" Version="5.56.0" />
-    <PackageReference Include="Microsoft.Identity.Client" Version="4.63.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="resources\microsoft_teams_icon_137398.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Azure.Identity" Version="1.13.0-beta.1" />
+		<PackageReference Include="Microsoft.Graph" Version="5.56.0" />
+		<PackageReference Include="Microsoft.Identity.Client" Version="4.63.0" />
+	</ItemGroup>
 
 </Project>
