@@ -1,7 +1,8 @@
+using Microsoft.Win32;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Text.Json;
 using System.Windows.Forms;
-using TeamsCallApp;
 
 namespace TeamsCallApp
 {
@@ -9,7 +10,10 @@ namespace TeamsCallApp
     {
         private string ConfigDirectory => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config");
         private string SettingsFilePath => Path.Combine(ConfigDirectory, "settings.json");
-        private string ContactsFilePath => Path.Combine(ConfigDirectory, "contacts.json");
+        private string appName = "TeamsCallApp";
+        private string executablePath = Application.ExecutablePath;
+
+        // Default values
         private int HOTKEY_ID = 1;
         private Keys currentHotkey = Keys.P;
         private const int WM_HOTKEY = 0x0312;
@@ -18,6 +22,22 @@ namespace TeamsCallApp
         private string callAppUri = "tel:";
         private bool enableNotifications = true;
         private AppSettings settings = new AppSettings();
+
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetForegroundWindow();
+
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        private static extern bool SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        [DllImport("user32.dll")]
+        private static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, int dwExtraInfo);
+
+        private const int WM_KEYDOWN = 0x0100;
+        private const int WM_KEYUP = 0x0101;
+        private const byte VK_CONTROL = 0x11;
+        private const byte VK_C = 0x43;
+
 
         public Form1()
         {
@@ -30,10 +50,26 @@ namespace TeamsCallApp
             notifyIcon1.Visible = true;
 
             LoadSettings();
+            SetStartup(startWithWindows);  // Startup-Einstellung anwenden
 
             if (enableNotifications)
             {
                 RegisterHotKey(this.Handle, HOTKEY_ID, 0, (int)currentHotkey);
+            }
+        }
+
+        private void SetStartup(bool enable)
+        {
+            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true))
+            {
+                if (enable)
+                {
+                    key.SetValue(appName, "\"" + executablePath + "\"");
+                }
+                else
+                {
+                    key.DeleteValue(appName, false);
+                }
             }
         }
 
@@ -83,7 +119,40 @@ namespace TeamsCallApp
 
         private string GetSelectedText()
         {
-            return Clipboard.GetText();  // TODO: Change to marked text (global)!
+            string selectedText = string.Empty;
+            bool textCopied = false;
+
+            keybd_event(VK_CONTROL, 0, 0, 0); // STRG drücken
+            keybd_event(VK_C, 0, 0, 0); // C drücken
+            keybd_event(VK_C, 0, 2, 0); // C loslassen
+            keybd_event(VK_CONTROL, 0, 2, 0); // STRG loslassen
+
+            for (int i = 0; i < 5; i++)
+            {
+                try
+                {
+                    Thread.Sleep(50);
+                    selectedText = Clipboard.GetText();
+
+                    if (!string.IsNullOrEmpty(selectedText))
+                    {
+                        textCopied = true;
+                        break;
+                    }
+                }
+                catch (ExternalException)
+                {
+                    Thread.Sleep(50); 
+                }
+            }
+
+            if (!textCopied)
+            {
+                MessageBox.Show("Konnte den markierten Text nicht kopieren. Bitte erneut versuchen.", "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+          
+
+            return selectedText;
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -174,14 +243,6 @@ namespace TeamsCallApp
 
             var json = JsonSerializer.Serialize(settings);
             File.WriteAllText(SettingsFilePath, json);
-        }
-
-        private void contactBookToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (var contactBookForm = new ContactBookForm(ContactsFilePath))
-            {
-                contactBookForm.ShowDialog();
-            }
         }
 
         [DllImport("user32.dll")]

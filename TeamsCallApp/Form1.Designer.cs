@@ -22,7 +22,6 @@
             showToolStripMenuItem = new ToolStripMenuItem();
             openSettingsToolStripMenuItem = new ToolStripMenuItem();
             exitToolStripMenuItem = new ToolStripMenuItem();
-            contactBookToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -40,7 +39,7 @@
             // 
             // showToolStripMenuItem
             // 
-            showToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openSettingsToolStripMenuItem, contactBookToolStripMenuItem });
+            showToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openSettingsToolStripMenuItem });
             showToolStripMenuItem.Name = "showToolStripMenuItem";
             showToolStripMenuItem.Size = new Size(180, 22);
             showToolStripMenuItem.Text = "Options";
@@ -59,13 +58,6 @@
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
-            // contactBookToolStripMenuItem
-            // 
-            contactBookToolStripMenuItem.Name = "contactBookToolStripMenuItem";
-            contactBookToolStripMenuItem.Size = new Size(180, 22);
-            contactBookToolStripMenuItem.Text = "Contact Book";
-            contactBookToolStripMenuItem.Click += contactBookToolStripMenuItem_Click;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -83,6 +75,5 @@
         private ToolStripMenuItem showToolStripMenuItem;
         private ToolStripMenuItem exitToolStripMenuItem;
         private ToolStripMenuItem openSettingsToolStripMenuItem;
-        private ToolStripMenuItem contactBookToolStripMenuItem;
     }
 }

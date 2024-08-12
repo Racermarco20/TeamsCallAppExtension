@@ -12,7 +12,6 @@ namespace TeamsCallApp
             InitializeComponent();
             textBox1.Text = selectedText;
 
-            // Set the AcceptButton property to the Call Now button
             this.AcceptButton = this.buttonCallNow;
         }
 
