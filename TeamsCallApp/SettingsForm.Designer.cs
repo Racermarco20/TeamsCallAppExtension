@@ -1,4 +1,7 @@
-﻿namespace TeamsCallApp
+﻿using static System.Net.Mime.MediaTypeNames;
+using System.Windows.Forms;
+
+namespace TeamsCallApp
 {
     partial class SettingsForm
     {
@@ -11,6 +14,9 @@
         private System.Windows.Forms.CheckBox checkBoxEnableNotifications;
         private System.Windows.Forms.Label labelCallApp;
         private System.Windows.Forms.Label labelNotifications;
+        private System.Windows.Forms.CheckBox checkBoxConfirmBeforeCalling;
+        private System.Windows.Forms.ComboBox comboBoxTheme;
+        private System.Windows.Forms.Label labelTheme;
 
         protected override void Dispose(bool disposing)
         {
@@ -31,6 +37,9 @@
             checkBoxEnableNotifications = new CheckBox();
             labelCallApp = new Label();
             labelNotifications = new Label();
+            checkBoxConfirmBeforeCalling = new CheckBox();
+            comboBoxTheme = new ComboBox();
+            labelTheme = new Label();
             SuspendLayout();
             // 
             // label1
@@ -44,17 +53,17 @@
             // 
             // textBoxHotkey
             // 
-            textBoxHotkey.Location = new Point(102, 12);
+            textBoxHotkey.Location = new Point(140, 12);
             textBoxHotkey.Name = "textBoxHotkey";
             textBoxHotkey.Size = new Size(100, 23);
             textBoxHotkey.TabIndex = 1;
             // 
             // buttonSave
             // 
-            buttonSave.Location = new Point(102, 160);
+            buttonSave.Location = new Point(140, 250);
             buttonSave.Name = "buttonSave";
             buttonSave.Size = new Size(100, 23);
-            buttonSave.TabIndex = 9;
+            buttonSave.TabIndex = 11;
             buttonSave.Text = "Save";
             buttonSave.UseVisualStyleBackColor = true;
             buttonSave.Click += buttonSave_Click;
@@ -62,7 +71,7 @@
             // checkBoxStartWithWindows
             // 
             checkBoxStartWithWindows.AutoSize = true;
-            checkBoxStartWithWindows.Location = new Point(12, 41);
+            checkBoxStartWithWindows.Location = new Point(12, 50);
             checkBoxStartWithWindows.Name = "checkBoxStartWithWindows";
             checkBoxStartWithWindows.Size = new Size(128, 19);
             checkBoxStartWithWindows.TabIndex = 2;
@@ -71,43 +80,75 @@
             // 
             // textBoxCallApp
             // 
-            textBoxCallApp.Location = new Point(102, 63);
+            textBoxCallApp.Location = new Point(140, 75);
             textBoxCallApp.Name = "textBoxCallApp";
             textBoxCallApp.Size = new Size(100, 23);
-            textBoxCallApp.TabIndex = 6;
+            textBoxCallApp.TabIndex = 4;
             // 
             // checkBoxEnableNotifications
             // 
             checkBoxEnableNotifications.AutoSize = true;
-            checkBoxEnableNotifications.Location = new Point(102, 92);
+            checkBoxEnableNotifications.Location = new Point(140, 110);
             checkBoxEnableNotifications.Name = "checkBoxEnableNotifications";
             checkBoxEnableNotifications.Size = new Size(61, 19);
-            checkBoxEnableNotifications.TabIndex = 8;
+            checkBoxEnableNotifications.TabIndex = 6;
             checkBoxEnableNotifications.Text = "Enable";
             checkBoxEnableNotifications.UseVisualStyleBackColor = true;
             // 
             // labelCallApp
             // 
             labelCallApp.AutoSize = true;
-            labelCallApp.Location = new Point(12, 63);
+            labelCallApp.Location = new Point(12, 78);
             labelCallApp.Name = "labelCallApp";
             labelCallApp.Size = new Size(81, 15);
-            labelCallApp.TabIndex = 5;
+            labelCallApp.TabIndex = 3;
             labelCallApp.Text = "Call App (URI)";
             // 
             // labelNotifications
             // 
             labelNotifications.AutoSize = true;
-            labelNotifications.Location = new Point(12, 91);
+            labelNotifications.Location = new Point(12, 111);
             labelNotifications.Name = "labelNotifications";
             labelNotifications.Size = new Size(75, 15);
-            labelNotifications.TabIndex = 7;
+            labelNotifications.TabIndex = 5;
             labelNotifications.Text = "Notifications";
+            // 
+            // checkBoxConfirmBeforeCalling
+            // 
+            checkBoxConfirmBeforeCalling.AutoSize = true;
+            checkBoxConfirmBeforeCalling.Location = new Point(12, 145);
+            checkBoxConfirmBeforeCalling.Name = "checkBoxConfirmBeforeCalling";
+            checkBoxConfirmBeforeCalling.Size = new Size(143, 19);
+            checkBoxConfirmBeforeCalling.TabIndex = 7;
+            checkBoxConfirmBeforeCalling.Text = "Confirm Before Calling";
+            checkBoxConfirmBeforeCalling.UseVisualStyleBackColor = true;
+            // 
+            // comboBoxTheme
+            // 
+            comboBoxTheme.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxTheme.FormattingEnabled = true;
+            comboBoxTheme.Items.AddRange(new object[] { "Light", "Dark" });
+            comboBoxTheme.Location = new Point(140, 180);
+            comboBoxTheme.Name = "comboBoxTheme";
+            comboBoxTheme.Size = new Size(100, 23);
+            comboBoxTheme.TabIndex = 9;
+            // 
+            // labelTheme
+            // 
+            labelTheme.AutoSize = true;
+            labelTheme.Location = new Point(12, 183);
+            labelTheme.Name = "labelTheme";
+            labelTheme.Size = new Size(43, 15);
+            labelTheme.TabIndex = 8;
+            labelTheme.Text = "Theme";
             // 
             // SettingsForm
             // 
-            ClientSize = new Size(214, 195);
+            ClientSize = new Size(260, 290);
             Controls.Add(buttonSave);
+            Controls.Add(checkBoxConfirmBeforeCalling);
+            Controls.Add(comboBoxTheme);
+            Controls.Add(labelTheme);
             Controls.Add(checkBoxEnableNotifications);
             Controls.Add(labelNotifications);
             Controls.Add(textBoxCallApp);
