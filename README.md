@@ -7,7 +7,7 @@
 Simply install the programm <br>
 It will run as a taskbar app <br>
 If you right click the icon, and hover over options, you can make changes to some settings like the default key and more<br>
-Mark the number with your mouse or touchpad and simply press the configured hotkey <br>
+Mark the number with your mouse or touchpad and simply press the configured hotkey, or mark the number an make a right click on it. <br>
 A form will show up with you copyed number <br>
 Hit Call now
 

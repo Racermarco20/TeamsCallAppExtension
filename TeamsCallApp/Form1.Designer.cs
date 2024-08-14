@@ -35,26 +35,26 @@
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { showToolStripMenuItem, exitToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(181, 70);
+            contextMenuStrip1.Size = new Size(117, 48);
             // 
             // showToolStripMenuItem
             // 
             showToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { openSettingsToolStripMenuItem });
             showToolStripMenuItem.Name = "showToolStripMenuItem";
-            showToolStripMenuItem.Size = new Size(180, 22);
+            showToolStripMenuItem.Size = new Size(116, 22);
             showToolStripMenuItem.Text = "Options";
             // 
             // openSettingsToolStripMenuItem
             // 
             openSettingsToolStripMenuItem.Name = "openSettingsToolStripMenuItem";
-            openSettingsToolStripMenuItem.Size = new Size(180, 22);
+            openSettingsToolStripMenuItem.Size = new Size(148, 22);
             openSettingsToolStripMenuItem.Text = "Open Settings";
             openSettingsToolStripMenuItem.Click += openSettingsToolStripMenuItem_Click;
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(180, 22);
+            exitToolStripMenuItem.Size = new Size(116, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 

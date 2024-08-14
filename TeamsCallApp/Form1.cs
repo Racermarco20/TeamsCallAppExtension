@@ -1,19 +1,25 @@
 using Microsoft.Win32;
 using System.Runtime.InteropServices;
-using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
-using System.Windows.Forms;
-using PhoneNumbers;
+using System.Diagnostics;
+using System.Windows; // für WPF-Controls
+using System.Windows.Controls; // für WPF-Controls wie Button, Label
+using System.Windows.Input; // für WPF-Ereignisse
+using Clipboard = System.Windows.Clipboard; // Richtige Verwendung der Zwischenablage in WPF
+using WinForms = System.Windows.Forms; // Alias für Windows Forms
+using System.Windows.Forms; // für Windows Forms (ohne Alias)
 
 namespace TeamsCallApp
 {
-    public partial class Form1 : Form
+    public partial class Form1 : WinForms.Form // Verwende den Alias für das Form
     {
+
         private string ConfigDirectory => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config");
         private string SettingsFilePath => Path.Combine(ConfigDirectory, "settings.json");
         private string appName = Program.APP_NAME;
-        private string executablePath = Application.ExecutablePath;
+        private string executablePath = WinForms.Application.ExecutablePath; // Verwende den Alias
+        private static System.Windows.Controls.ContextMenu _currentContextMenu = null;
 
         // Default values
         private int HOTKEY_ID = 1;
@@ -27,6 +33,33 @@ namespace TeamsCallApp
         private string theme = "Light"; // Default to Light theme
         private AppSettings settings = new AppSettings();
 
+        private const int WM_KEYDOWN = 0x0100;
+        private const int WM_KEYUP = 0x0101;
+        private const byte VK_CONTROL = 0x11;
+        private const byte VK_C = 0x43;
+        private const int WH_MOUSE_LL = 14;
+        private const int WM_RBUTTONDOWN = 0x0204;
+        private static LowLevelMouseProc _proc = HookCallback;
+        private static IntPtr _hookID = IntPtr.Zero;
+
+        [DllImport("user32.dll")]
+        private static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
+
+        [DllImport("user32.dll")]
+        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr SetWindowsHookEx(int idHook, LowLevelMouseProc lpfn, IntPtr hMod, uint dwThreadId);
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        private static extern bool UnhookWindowsHookEx(IntPtr hhk);
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr CallNextHookEx(IntPtr hhk, int nCode, IntPtr wParam, IntPtr lParam);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto, SetLastError = true)]
+        private static extern IntPtr GetModuleHandle(string lpModuleName);
         [DllImport("user32.dll")]
         private static extern IntPtr GetForegroundWindow();
 
@@ -36,16 +69,11 @@ namespace TeamsCallApp
         [DllImport("user32.dll")]
         private static extern void keybd_event(byte bVk, byte bScan, uint dwFlags, int dwExtraInfo);
 
-        private const int WM_KEYDOWN = 0x0100;
-        private const int WM_KEYUP = 0x0101;
-        private const byte VK_CONTROL = 0x11;
-        private const byte VK_C = 0x43;
-
         public Form1()
         {
             InitializeComponent();
             this.SizeChanged += Form1_Resize;
-            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = WinForms.FormWindowState.Minimized;
             this.ShowInTaskbar = false;
 
             notifyIcon1.ContextMenuStrip = contextMenuStrip1;
@@ -75,128 +103,53 @@ namespace TeamsCallApp
             }
         }
 
-        private void ApplyTheme(string theme, Control.ControlCollection controlsSettings)
+        private static IntPtr SetHook(LowLevelMouseProc proc)
         {
-            //MessageBox.Show("Theme is being applied: " + theme);
-
-            if (theme == "Dark")
+            using (Process curProcess = Process.GetCurrentProcess())
+            using (ProcessModule curModule = curProcess.MainModule)
             {
-                this.BackColor = Color.Black;
-                this.ForeColor = Color.White;
-                ApplyThemeToControls(controlsSettings, Color.FromArgb(45, 45, 48), Color.White);
-            }
-            else if (theme == "Light")
-            {
-                this.BackColor = Color.White;
-                this.ForeColor = Color.Black;
-                ApplyThemeToControls(controlsSettings, Color.White, Color.Black);
-            }
-            else
-            {
-                MessageBox.Show("No theme error!");
-            }
-
-            this.Refresh();
-        }
-
-        private void ApplyThemeToControls(Control.ControlCollection controls, System.Drawing.Color backColor, System.Drawing.Color foreColor)
-        {
-            //MessageBox.Show($"Number of controls: {controls.Count}");
-
-            foreach (Control control in controls)
-            {
-                if (control is TextBox || control is ComboBox || control is ListBox)
-                {
-                    control.BackColor = backColor == Color.FromArgb(45, 45, 48) ? Color.FromArgb(30, 30, 30) : Color.White;
-                    control.ForeColor = foreColor;
-                }
-                else if (control is Button button)
-                {
-                    button.BackColor = Color.FromArgb(28, 28, 28);
-                    button.ForeColor = Color.White;
-                    button.FlatStyle = FlatStyle.Flat;
-                    button.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
-                }
-                else if (control is Label || control is CheckBox || control is RadioButton)
-                {
-                    control.ForeColor = foreColor;
-                }
-                else
-                {
-                    control.BackColor = backColor;
-                    control.ForeColor = foreColor;
-                }
-
-                //MessageBox.Show($"Control: {control.Name}, BackColor: {control.BackColor}, ForeColor: {control.ForeColor}");
-
-                if (control.HasChildren)
-                {
-                    ApplyThemeToControls(control.Controls, backColor, foreColor);
-                }
+                return SetWindowsHookEx(WH_MOUSE_LL, proc, GetModuleHandle(curModule.ModuleName), 0);
             }
         }
 
+        private delegate IntPtr LowLevelMouseProc(int nCode, IntPtr wParam, IntPtr lParam);
 
-        private void Form1_Resize(object sender, EventArgs e)
+        private static IntPtr HookCallback(int nCode, IntPtr wParam, IntPtr lParam)
         {
-            if (this.WindowState == FormWindowState.Minimized)
+            if (nCode >= 0)
             {
-                Hide();
-                notifyIcon1.Visible = true;
-            }
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            if (enableNotifications && m.Msg == WM_HOTKEY && m.WParam.ToInt32() == HOTKEY_ID)
-            {
-                string selectedText = GetSelectedText();
-                if (!string.IsNullOrEmpty(selectedText))
+                // Wenn das Kontextmenü geöffnet ist und ein Klick außerhalb erfolgt, schließen
+                if (_currentContextMenu != null && _currentContextMenu.IsOpen)
                 {
-                    if (confirmBeforeCalling)
-                    {
-                        var result = MessageBox.Show($"Do you want to call {selectedText}?", "Confirm Call", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                        if (result == DialogResult.Yes)
-                        {
-                            if (isValidPhoneNumber(selectedText))
-                            {
-                                ShowCaptureForm(selectedText);
-                            } else MessageBox.Show("Not a valid phone number!");
-                            
-                        }
-                    }
-                    else
-                    {
-                        ShowCaptureForm(selectedText);
-                    }
+                    _currentContextMenu.IsOpen = false;
+                    _currentContextMenu = null;
+                }
+
+                if (wParam == (IntPtr)WM_RBUTTONDOWN)
+                {
+                    HandleRightClick();
                 }
             }
-            else
-            {
-                base.WndProc(ref m);
-            }
+
+            return CallNextHookEx(_hookID, nCode, wParam, lParam);
         }
 
-        private void ShowCaptureForm(string selectedText)
+        private static void HandleRightClick()
         {
-            if (currentCaptureForm == null)
+            string selectedText = GetSelectedText();
+            if (!string.IsNullOrEmpty(selectedText) && IsPhoneNumber(selectedText))
             {
-                currentCaptureForm = new CaptureForm(selectedText);
-                currentCaptureForm.FormClosed += (s, args) => currentCaptureForm = null;
-                currentCaptureForm.Show();
-
-                if (enableNotifications)
+                // Schließe das aktuelle Kontextmenü, wenn es geöffnet ist
+                if (_currentContextMenu != null && _currentContextMenu.IsOpen)
                 {
-                    notifyIcon1.ShowBalloonTip(1000, "TeamsCallApp", "Calling " + selectedText, ToolTipIcon.Info);
+                    _currentContextMenu.IsOpen = false;
                 }
-            }
-            else
-            {
-                MessageBox.Show("A capture form is already open.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ShowContextMenu(selectedText);
             }
         }
 
-        private string GetSelectedText()
+        private static string GetSelectedText()
         {
             string selectedText = string.Empty;
             bool textCopied = false;
@@ -224,13 +177,98 @@ namespace TeamsCallApp
                     Thread.Sleep(50);
                 }
             }
-
-            if (!textCopied)
-            {
-                MessageBox.Show("Could not copy the selected text. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            Clipboard.Clear();
 
             return selectedText;
+        }
+
+        private static bool IsPhoneNumber(string text)
+        {
+            // Regex, um zu überprüfen, ob der Text eine Telefonnummer ist
+            return Regex.IsMatch(text, @"^\+?[1-9]\d{1,14}$");
+        }
+
+        private static void ShowContextMenu(string phoneNumber)
+        {
+            // WPF-Kontextmenü erstellen
+            System.Windows.Controls.ContextMenu contextMenu = new System.Windows.Controls.ContextMenu(); // Verwende den WPF-Namensraum
+            System.Windows.Controls.MenuItem callItem = new System.Windows.Controls.MenuItem { Header = "Call with Teams" }; // Verwende den WPF-Namensraum
+            callItem.Click += (sender, e) => CallWithTeams(phoneNumber);
+            contextMenu.Items.Add(callItem);
+
+            // Kontextmenü anzeigen
+            contextMenu.IsOpen = true;
+        }
+
+        private static void CallWithTeams(string phoneNumber)
+        {
+            Process.Start(new ProcessStartInfo("tel:" + phoneNumber) { UseShellExecute = true });
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            UnhookWindowsHookEx(_hookID);
+            base.OnClosed(e);
+        }
+
+        protected override void WndProc(ref WinForms.Message m) // Verwende den Alias für Message
+        {
+            if (enableNotifications && m.Msg == WM_HOTKEY && m.WParam.ToInt32() == HOTKEY_ID)
+            {
+                string selectedText = GetSelectedText();
+                if (!string.IsNullOrEmpty(selectedText))
+                {
+                    if (confirmBeforeCalling)
+                    {
+                        var result = WinForms.MessageBox.Show($"Do you want to call {selectedText}?", "Confirm Call", WinForms.MessageBoxButtons.YesNo, WinForms.MessageBoxIcon.Question);
+                        if (result == WinForms.DialogResult.Yes)
+                        {
+                            if (IsPhoneNumber(selectedText))
+                            {
+                                ShowCaptureForm(selectedText);
+                            }
+                            else WinForms.MessageBox.Show("Not a valid phone number!");
+
+                        }
+                    }
+                    else
+                    {
+                        ShowCaptureForm(selectedText);
+                    }
+                }
+            }
+            else
+            {
+                base.WndProc(ref m);
+            }
+        }
+
+        private void ShowCaptureForm(string selectedText)
+        {
+            if (currentCaptureForm == null)
+            {
+                currentCaptureForm = new CaptureForm(selectedText);
+                currentCaptureForm.FormClosed += (s, args) => currentCaptureForm = null;
+                currentCaptureForm.Show();
+
+                if (enableNotifications)
+                {
+                    notifyIcon1.ShowBalloonTip(1000, "TeamsCallApp", "Calling " + selectedText, WinForms.ToolTipIcon.Info);
+                }
+            }
+            else
+            {
+                WinForms.MessageBox.Show("A capture form is already open.", "Information", WinForms.MessageBoxButtons.OK, WinForms.MessageBoxIcon.Information);
+            }
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == WinForms.FormWindowState.Minimized)
+            {
+                Hide();
+                notifyIcon1.Visible = true;
+            }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -245,9 +283,9 @@ namespace TeamsCallApp
         {
             using (SettingsForm settingsForm = new SettingsForm(currentHotkey, startWithWindows, callAppUri, enableNotifications, confirmBeforeCalling, theme))
             {
-                Control.ControlCollection controlsSettings = settingsForm.Controls;
-                if (settingsForm.ShowDialog() == DialogResult.OK)
-                { 
+                WinForms.Control.ControlCollection controlsSettings = settingsForm.Controls;
+                if (settingsForm.ShowDialog() == WinForms.DialogResult.OK)
+                {
                     UnregisterHotKey(this.Handle, HOTKEY_ID);
                     currentHotkey = settingsForm.CaptureHotkey;
                     startWithWindows = settingsForm.StartWithWindows;
@@ -255,9 +293,6 @@ namespace TeamsCallApp
                     enableNotifications = settingsForm.EnableNotifications;
                     confirmBeforeCalling = settingsForm.ConfirmBeforeCalling;
                     theme = settingsForm.Theme;
-
-                    //MessageBox.Show(controlsSettings.Count.ToString());
-
 
                     ApplyTheme(theme, controlsSettings);
 
@@ -271,29 +306,30 @@ namespace TeamsCallApp
             }
         }
 
-        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void notifyIcon1_MouseDoubleClick(object sender, WinForms.MouseEventArgs e) // Verwende den Alias
         {
-            if (e.Button == MouseButtons.Left)
+            if (e.Button == WinForms.MouseButtons.Left)
             {
                 notifyIcon1.Visible = true;
             }
         }
 
-        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        private void notifyIcon1_MouseClick(object sender, WinForms.MouseEventArgs e) // Verwende den Alias
         {
-            if (e.Button == MouseButtons.Right)
+            if (e.Button == WinForms.MouseButtons.Right)
             {
-                notifyIcon1.ContextMenuStrip.Show(Cursor.Position);
+                notifyIcon1.ContextMenuStrip.Show(WinForms.Cursor.Position);
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            _hookID = SetHook(_proc);
             notifyIcon1.Visible = true;
             this.Hide();
         }
 
-        protected override void OnFormClosing(FormClosingEventArgs e)
+        protected override void OnFormClosing(WinForms.FormClosingEventArgs e) // Verwende den Alias
         {
             UnregisterHotKey(this.Handle, HOTKEY_ID);
             notifyIcon1.Visible = false;
@@ -335,35 +371,60 @@ namespace TeamsCallApp
             File.WriteAllText(SettingsFilePath, json);
         }
 
-        private bool isValidPhoneNumber(string phoneNumber)
+        private void ApplyTheme(string theme, WinForms.Control.ControlCollection controlsSettings) // Verwende den Alias
         {
-            string cleanedPhoneNumber = phoneNumber.Replace(" ", "")
-                                                   .Replace("-", "")
-                                                   .Replace("(", "")
-                                                   .Replace(")", "");
-
-            var phoneNumberUtil = PhoneNumbers.PhoneNumberUtil.GetInstance();
-
-            
-            
-
-            try
+            if (theme == "Dark")
             {
-                var number = phoneNumberUtil.Parse(cleanedPhoneNumber, "AT");
-
-                return phoneNumberUtil.IsValidNumber(number);
+                this.BackColor = Color.Black;
+                this.ForeColor = Color.White;
+                ApplyThemeToControls(controlsSettings, Color.FromArgb(45, 45, 48), Color.White);
             }
-            catch (NumberParseException)
+            else if (theme == "Light")
             {
-                return false;
+                this.BackColor = Color.White;
+                this.ForeColor = Color.Black;
+                ApplyThemeToControls(controlsSettings, Color.White, Color.Black);
             }
+            else
+            {
+                WinForms.MessageBox.Show("No theme error!");
+            }
+
+            this.Refresh();
         }
 
-        [DllImport("user32.dll")]
-        private static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
+        private void ApplyThemeToControls(WinForms.Control.ControlCollection controls, System.Drawing.Color backColor, System.Drawing.Color foreColor) // Verwende den Alias
+        {
+            foreach (WinForms.Control control in controls) // Verwende den Alias
+            {
+                if (control is WinForms.TextBox || control is WinForms.ComboBox || control is WinForms.ListBox) // Verwende den Alias
+                {
+                    control.BackColor = backColor == Color.FromArgb(45, 45, 48) ? Color.FromArgb(30, 30, 30) : Color.White;
+                    control.ForeColor = foreColor;
+                }
+                else if (control is WinForms.Button button) // Verwende den Alias
+                {
+                    button.BackColor = Color.FromArgb(28, 28, 28);
+                    button.ForeColor = Color.White;
+                    button.FlatStyle = WinForms.FlatStyle.Flat;
+                    button.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+                }
+                else if (control is WinForms.Label || control is WinForms.CheckBox || control is WinForms.RadioButton) // Verwende den Alias
+                {
+                    control.ForeColor = foreColor;
+                }
+                else
+                {
+                    control.BackColor = backColor;
+                    control.ForeColor = foreColor;
+                }
 
-        [DllImport("user32.dll")]
-        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
+                if (control.HasChildren)
+                {
+                    ApplyThemeToControls(control.Controls, backColor, foreColor); // Verwende den Alias
+                }
+            }
+        }
 
         public class AppSettings
         {
@@ -373,6 +434,21 @@ namespace TeamsCallApp
             public bool EnableNotifications { get; set; }
             public bool ConfirmBeforeCalling { get; set; }
             public string Theme { get; set; }
+        }
+
+        private void InitializeNotifyIcon()
+        {
+            string iconPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "resources", "microsoft_teams_icon_137398.ico");
+
+            notifyIcon1 = new NotifyIcon
+            {
+                Icon = new System.Drawing.Icon(iconPath),
+                ContextMenuStrip = contextMenuStrip1,
+                Text = "TeamsCallApp",
+                Visible = true
+            };
+
+            notifyIcon1.MouseDoubleClick += notifyIcon1_MouseDoubleClick;
         }
     }
 }
