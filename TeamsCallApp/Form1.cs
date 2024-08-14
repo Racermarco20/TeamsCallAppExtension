@@ -4,6 +4,7 @@ using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using PhoneNumbers;
 
 namespace TeamsCallApp
 {
@@ -76,8 +77,7 @@ namespace TeamsCallApp
 
         private void ApplyTheme(string theme, Control.ControlCollection controlsSettings)
         {
-            // Überprüfe, ob das Theme korrekt angewendet wird
-            MessageBox.Show("Theme is being applied: " + theme);
+            //MessageBox.Show("Theme is being applied: " + theme);
 
             if (theme == "Dark")
             {
@@ -96,15 +96,12 @@ namespace TeamsCallApp
                 MessageBox.Show("No theme error!");
             }
 
-            this.BackColor = Color.Red;
-
-            // Sicherstellen, dass das Formular und seine Steuerelemente neu gezeichnet werden
             this.Refresh();
         }
 
         private void ApplyThemeToControls(Control.ControlCollection controls, System.Drawing.Color backColor, System.Drawing.Color foreColor)
         {
-            MessageBox.Show($"Number of controls: {controls.Count}");
+            //MessageBox.Show($"Number of controls: {controls.Count}");
 
             foreach (Control control in controls)
             {
@@ -130,10 +127,8 @@ namespace TeamsCallApp
                     control.ForeColor = foreColor;
                 }
 
-                // Ausgabe für Debugging-Zwecke
-                MessageBox.Show($"Control: {control.Name}, BackColor: {control.BackColor}, ForeColor: {control.ForeColor}");
+                //MessageBox.Show($"Control: {control.Name}, BackColor: {control.BackColor}, ForeColor: {control.ForeColor}");
 
-                // Rekursives Anwenden auf alle untergeordneten Steuerelemente
                 if (control.HasChildren)
                 {
                     ApplyThemeToControls(control.Controls, backColor, foreColor);
@@ -261,7 +256,7 @@ namespace TeamsCallApp
                     confirmBeforeCalling = settingsForm.ConfirmBeforeCalling;
                     theme = settingsForm.Theme;
 
-                    MessageBox.Show(controlsSettings.Count.ToString());
+                    //MessageBox.Show(controlsSettings.Count.ToString());
 
 
                     ApplyTheme(theme, controlsSettings);
@@ -342,8 +337,26 @@ namespace TeamsCallApp
 
         private bool isValidPhoneNumber(string phoneNumber)
         {
-            string pattern = @"^\+?(\d{1,3})?(\(\d{1,4}\))?\d{1,14}$";
-            return Regex.IsMatch(phoneNumber, pattern);
+            string cleanedPhoneNumber = phoneNumber.Replace(" ", "")
+                                                   .Replace("-", "")
+                                                   .Replace("(", "")
+                                                   .Replace(")", "");
+
+            var phoneNumberUtil = PhoneNumbers.PhoneNumberUtil.GetInstance();
+
+            
+            
+
+            try
+            {
+                var number = phoneNumberUtil.Parse(cleanedPhoneNumber, "AT");
+
+                return phoneNumberUtil.IsValidNumber(number);
+            }
+            catch (NumberParseException)
+            {
+                return false;
+            }
         }
 
         [DllImport("user32.dll")]

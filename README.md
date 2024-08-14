@@ -12,8 +12,8 @@ A form will show up with you copyed number <br>
 Hit Call now
 
 #### Errors
-"You need to enter or copy a phone number!": Your input is empty, you need to enter a valid phone number! <br>
-"Not a valid phone number!": Your phone number doesn't have a valid format! (Our regex: ^\+?(\d{1,3})?(\(\d{1,4}\))?\d{1,14}$) <br>
+"You need to provide a phone number!": Your input is empty, you need to enter/mark a valid phone number! <br>
+"Not a valid phone number!": Your phone number doesn't have a valid format!<br>
 
 
 
