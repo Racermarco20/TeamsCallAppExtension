@@ -3,22 +3,18 @@ using System.Runtime.InteropServices;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Diagnostics;
-using System.Windows; // für WPF-Controls
-using System.Windows.Controls; // für WPF-Controls wie Button, Label
-using System.Windows.Input; // für WPF-Ereignisse
-using Clipboard = System.Windows.Clipboard; // Richtige Verwendung der Zwischenablage in WPF
-using WinForms = System.Windows.Forms; // Alias für Windows Forms
-using System.Windows.Forms; // für Windows Forms (ohne Alias)
+using Clipboard = System.Windows.Clipboard;
+using WinForms = System.Windows.Forms;
 
 namespace TeamsCallApp
 {
-    public partial class Form1 : WinForms.Form // Verwende den Alias für das Form
+    public partial class Form1 : WinForms.Form
     {
 
         private string ConfigDirectory => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config");
         private string SettingsFilePath => Path.Combine(ConfigDirectory, "settings.json");
         private string appName = Program.APP_NAME;
-        private string executablePath = WinForms.Application.ExecutablePath; // Verwende den Alias
+        private string executablePath = WinForms.Application.ExecutablePath;
         private static System.Windows.Controls.ContextMenu _currentContextMenu = null;
 
         // Default values
@@ -118,7 +114,6 @@ namespace TeamsCallApp
         {
             if (nCode >= 0)
             {
-                // Wenn das Kontextmenü geöffnet ist und ein Klick außerhalb erfolgt, schließen
                 if (_currentContextMenu != null && _currentContextMenu.IsOpen)
                 {
                     _currentContextMenu.IsOpen = false;
@@ -138,8 +133,7 @@ namespace TeamsCallApp
         {
             string selectedText = GetSelectedText();
             if (!string.IsNullOrEmpty(selectedText) && IsPhoneNumber(selectedText))
-            {
-                // Schließe das aktuelle Kontextmenü, wenn es geöffnet ist
+            {   
                 if (_currentContextMenu != null && _currentContextMenu.IsOpen)
                 {
                     _currentContextMenu.IsOpen = false;
@@ -211,7 +205,7 @@ namespace TeamsCallApp
             base.OnClosed(e);
         }
 
-        protected override void WndProc(ref WinForms.Message m) // Verwende den Alias für Message
+        protected override void WndProc(ref WinForms.Message m)
         {
             if (enableNotifications && m.Msg == WM_HOTKEY && m.WParam.ToInt32() == HOTKEY_ID)
             {
@@ -306,7 +300,7 @@ namespace TeamsCallApp
             }
         }
 
-        private void notifyIcon1_MouseDoubleClick(object sender, WinForms.MouseEventArgs e) // Verwende den Alias
+        private void notifyIcon1_MouseDoubleClick(object sender, WinForms.MouseEventArgs e)
         {
             if (e.Button == WinForms.MouseButtons.Left)
             {
@@ -314,7 +308,7 @@ namespace TeamsCallApp
             }
         }
 
-        private void notifyIcon1_MouseClick(object sender, WinForms.MouseEventArgs e) // Verwende den Alias
+        private void notifyIcon1_MouseClick(object sender, WinForms.MouseEventArgs e)
         {
             if (e.Button == WinForms.MouseButtons.Right)
             {
@@ -329,7 +323,7 @@ namespace TeamsCallApp
             this.Hide();
         }
 
-        protected override void OnFormClosing(WinForms.FormClosingEventArgs e) // Verwende den Alias
+        protected override void OnFormClosing(WinForms.FormClosingEventArgs e)
         {
             UnregisterHotKey(this.Handle, HOTKEY_ID);
             notifyIcon1.Visible = false;
@@ -371,7 +365,7 @@ namespace TeamsCallApp
             File.WriteAllText(SettingsFilePath, json);
         }
 
-        private void ApplyTheme(string theme, WinForms.Control.ControlCollection controlsSettings) // Verwende den Alias
+        private void ApplyTheme(string theme, WinForms.Control.ControlCollection controlsSettings)
         {
             if (theme == "Dark")
             {
@@ -393,7 +387,7 @@ namespace TeamsCallApp
             this.Refresh();
         }
 
-        private void ApplyThemeToControls(WinForms.Control.ControlCollection controls, System.Drawing.Color backColor, System.Drawing.Color foreColor) // Verwende den Alias
+        private void ApplyThemeToControls(WinForms.Control.ControlCollection controls, System.Drawing.Color backColor, System.Drawing.Color foreColor)
         {
             foreach (WinForms.Control control in controls) // Verwende den Alias
             {
