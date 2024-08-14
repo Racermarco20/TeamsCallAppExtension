@@ -12,7 +12,7 @@ namespace TeamsCallApp
     {
         private string ConfigDirectory => Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config");
         private string SettingsFilePath => Path.Combine(ConfigDirectory, "settings.json");
-        private string appName = "TeamsCallApp";
+        private string appName = Program.APP_NAME;
         private string executablePath = Application.ExecutablePath;
 
         // Default values
