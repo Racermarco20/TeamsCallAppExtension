@@ -185,10 +185,9 @@ namespace TeamsCallApp
         {
 
             if (_isLoaded && this.WindowState == FormWindowState.Minimized)
-                
             {
-                notifyIcon1.ShowBalloonTip(1000, Program.APP_NAME, Program.APP_NAME + " has been minimized to tray!", ToolTipIcon.Info);
                 Hide();
+                notifyIcon1.ShowBalloonTip(1000, Program.APP_NAME, Program.APP_NAME + " has been minimized to tray!", ToolTipIcon.Info);
                 notifyIcon1.Visible = true;
             }
         }
