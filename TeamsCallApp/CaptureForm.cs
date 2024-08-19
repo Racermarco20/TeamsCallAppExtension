@@ -1,7 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
+﻿using System.Diagnostics;
 
 namespace TeamsCallApp
 {
@@ -20,7 +17,7 @@ namespace TeamsCallApp
             if (PhoneNumberValidator.IsPhoneNumber(phoneNumber))
             {
 
-                MainForm.pNotifyIcon.ShowBalloonTip(2000, "TeamsCallApp", "Calling " + phoneNumber, ToolTipIcon.Info);
+                MainForm.pNotifyIcon.ShowBalloonTip(2000, Program.APP_NAME, "Calling " + phoneNumber, ToolTipIcon.Info);
 
                 Process.Start(new ProcessStartInfo($"tel:{phoneNumber}") { UseShellExecute = true });
                 Close();

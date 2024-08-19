@@ -1,10 +1,6 @@
-using System;
 using System.Diagnostics;
-using System.IO;
 using System.Runtime.InteropServices;
 using System.Text.Json;
-using System.Text.RegularExpressions;
-using System.Windows.Forms;
 using Microsoft.Win32;
 
 namespace TeamsCallApp
@@ -24,6 +20,7 @@ namespace TeamsCallApp
         private bool _startWithWindows;
         private string _callAppUri = TelPrefix;
         private AppSettings _settings = new AppSettings();
+        private bool _isLoaded = false;
 
         private static IntPtr _hookID = IntPtr.Zero;
         private delegate IntPtr LowLevelMouseProc(int nCode, IntPtr wParam, IntPtr lParam);
@@ -57,7 +54,6 @@ namespace TeamsCallApp
         public MainForm()
         {
             InitializeComponent();
-            this.SizeChanged += Form1_Resize;
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
 
@@ -185,20 +181,23 @@ namespace TeamsCallApp
             Application.Exit();
         }
 
-        private void Form1_Resize(object sender, EventArgs e)
+        private void MainForm_Resize(object sender, EventArgs e)
         {
-            if (this.WindowState == FormWindowState.Minimized)
+
+            if (_isLoaded && this.WindowState == FormWindowState.Minimized)
+                
             {
+                notifyIcon1.ShowBalloonTip(1000, Program.APP_NAME, Program.APP_NAME + " has been minimized to tray!", ToolTipIcon.Info);
                 Hide();
                 notifyIcon1.Visible = true;
             }
         }
 
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             _hookID = SetHook(_proc);
-            this.Hide();
+            _isLoaded = true;
+            MainForm_Resize(sender, e);
         }
     }
 }

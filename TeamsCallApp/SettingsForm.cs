@@ -17,23 +17,25 @@ namespace TeamsCallApp
 
             checkBoxStartWithWindows.Checked = startWithWindows;
             textBoxCallApp.Text = callApp;
+
+            textBoxHotkey.KeyDown += TextBoxHotkey_KeyDown;
+        }
+
+        private void TextBoxHotkey_KeyDown(object sender, KeyEventArgs e)
+        {
+            textBoxHotkey.Text = e.KeyCode.ToString();
+            CaptureHotkey = e.KeyCode;
+
+            e.SuppressKeyPress = true;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            if (Enum.TryParse(textBoxHotkey.Text, true, out Keys newHotkey))
-            {
-                CaptureHotkey = newHotkey;
-                StartWithWindows = checkBoxStartWithWindows.Checked;
-                DefaultCallApp = textBoxCallApp.Text;
+            StartWithWindows = checkBoxStartWithWindows.Checked;
+            DefaultCallApp = textBoxCallApp.Text;
 
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-            else
-            {
-                MessageBox.Show("Invalid hotkey. Please enter a valid key.");
-            }
+            DialogResult = DialogResult.OK;
+            Close();
         }
     }
 }

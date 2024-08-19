@@ -68,6 +68,7 @@
             Name = "MainForm";
             Text = "MainForm";
             Load += MainForm_Load;
+            Resize += MainForm_Resize;
             contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
         }

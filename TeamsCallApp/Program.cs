@@ -6,7 +6,7 @@ namespace TeamsCallApp
     internal static class Program
     {
 
-        public static string APP_NAME = "Teamscall App";
+        public static string APP_NAME = "Teams Call App";
 
         [STAThread]
         static void Main()

@@ -45,6 +45,8 @@ namespace TeamsCallApp
             // textBoxHotkey
             // 
             textBoxHotkey.Location = new Point(140, 12);
+            textBoxHotkey.MaxLength = 20;
+            textBoxHotkey.Multiline = true;
             textBoxHotkey.Name = "textBoxHotkey";
             textBoxHotkey.Size = new Size(100, 23);
             textBoxHotkey.TabIndex = 1;
