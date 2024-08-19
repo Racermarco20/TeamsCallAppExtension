@@ -15,10 +15,9 @@
 		<AssemblyDescription>Lets you call a phone number with teams without needing to go into teams!</AssemblyDescription>
 		<Company>R4C</Company>
 		<Product>TeamsCallExtension</Product>
-		<AssemblyVersion>1.0.0.3</AssemblyVersion>
-		<FileVersion>1.0.0.3</FileVersion>
-		<!--AssemblyCopyright>© 2024 R4C. All rights reserved.</AssemblyCopyright-->
-		<!--Generated in Properties/AssemblyInfo.cs-->
+		<AssemblyVersion>1.0.0.0</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<Version>1.1.0.3</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
