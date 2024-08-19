@@ -1,6 +1,6 @@
 ﻿namespace TeamsCallApp
 {
-    partial class Form1
+    partial class MainForm
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -16,7 +16,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             notifyIcon1 = new NotifyIcon(components);
             contextMenuStrip1 = new ContextMenuStrip(components);
             showToolStripMenuItem = new ToolStripMenuItem();
@@ -27,9 +27,9 @@
             // 
             // notifyIcon1
             // 
+            notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
             notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
             notifyIcon1.Text = "TeamsCallApp";
-            notifyIcon1.MouseDoubleClick += notifyIcon1_MouseDoubleClick;
             // 
             // contextMenuStrip1
             // 
@@ -58,14 +58,16 @@
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
-            // Form1
+            // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Name = "Form1";
-            Text = "Form1";
-            Load += Form1_Load;
+            Enabled = false;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "MainForm";
+            Text = "MainForm";
+            Load += MainForm_Load;
             contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
         }

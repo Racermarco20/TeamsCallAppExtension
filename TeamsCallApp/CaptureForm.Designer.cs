@@ -17,36 +17,38 @@
 
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.buttonCallNow = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CaptureForm));
+            textBox1 = new TextBox();
+            buttonCallNow = new Button();
+            SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(260, 20);
-            this.textBox1.TabIndex = 0;
+            textBox1.Location = new Point(12, 12);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(260, 23);
+            textBox1.TabIndex = 0;
             // 
             // buttonCallNow
             // 
-            this.buttonCallNow.Location = new System.Drawing.Point(197, 38);
-            this.buttonCallNow.Name = "buttonCallNow";
-            this.buttonCallNow.Size = new System.Drawing.Size(75, 23);
-            this.buttonCallNow.TabIndex = 1;
-            this.buttonCallNow.Text = "Call Now";
-            this.buttonCallNow.UseVisualStyleBackColor = true;
-            this.buttonCallNow.Click += new System.EventHandler(this.buttonCallNow_Click);
+            buttonCallNow.Location = new Point(197, 38);
+            buttonCallNow.Name = "buttonCallNow";
+            buttonCallNow.Size = new Size(75, 23);
+            buttonCallNow.TabIndex = 1;
+            buttonCallNow.Text = "Call Now";
+            buttonCallNow.UseVisualStyleBackColor = true;
+            buttonCallNow.Click += buttonCallNow_Click;
             // 
             // CaptureForm
             // 
-            this.ClientSize = new System.Drawing.Size(284, 71);
-            this.Controls.Add(this.buttonCallNow);
-            this.Controls.Add(this.textBox1);
-            this.Name = "CaptureForm";
-            this.Text = "Capture Phone Number";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            ClientSize = new Size(284, 71);
+            Controls.Add(buttonCallNow);
+            Controls.Add(textBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "CaptureForm";
+            Text = "Capture Phone Number";
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

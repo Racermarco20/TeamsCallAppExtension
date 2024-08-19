@@ -6,7 +6,7 @@
 		<Nullable>enable</Nullable>
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<ApplicationIcon>resources\microsoft_teams_icon_137398.ico</ApplicationIcon>
+		<ApplicationIcon>resources\icon.ico</ApplicationIcon>
 		<ApplicationManifest>app.manifest</ApplicationManifest>
 
 		<!-- Assembly Information -->
@@ -22,7 +22,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Content Include="resources\microsoft_teams_icon_137398.ico" />
+		<Content Include="resources\icon.ico">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 	<ItemGroup>

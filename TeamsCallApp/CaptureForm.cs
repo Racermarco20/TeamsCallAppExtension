@@ -11,35 +11,24 @@ namespace TeamsCallApp
         {
             InitializeComponent();
             textBox1.Text = selectedText;
-
             this.AcceptButton = this.buttonCallNow;
         }
 
         private void buttonCallNow_Click(object sender, EventArgs e)
         {
-            string phoneNumber = textBox1.Text;
-            if (!string.IsNullOrEmpty(phoneNumber))
+            var phoneNumber = textBox1.Text;
+            if (PhoneNumberValidator.IsPhoneNumber(phoneNumber))
             {
-                if (isValidPhoneNumber(phoneNumber))
-                {
-                    Process.Start(new ProcessStartInfo($"tel:{phoneNumber}") { UseShellExecute = true });
-                    Close();
-                }
-                else
-                {
-                    MessageBox.Show("Not a valid phone number!");
-                }
+
+                MainForm.pNotifyIcon.ShowBalloonTip(2000, "TeamsCallApp", "Calling " + phoneNumber, ToolTipIcon.Info);
+
+                Process.Start(new ProcessStartInfo($"tel:{phoneNumber}") { UseShellExecute = true });
+                Close();
             }
             else
             {
-                MessageBox.Show("You need to enter or copy a phone number!");
+                MessageBox.Show("Not a valid phone number!");
             }
-        }
-
-        private bool isValidPhoneNumber(string phoneNumber)
-        {
-            string pattern = @"^\+?(\d{1,3})?(\(\d{1,4}\))?\d{1,14}$";
-            return Regex.IsMatch(phoneNumber, pattern);
         }
     }
 }
