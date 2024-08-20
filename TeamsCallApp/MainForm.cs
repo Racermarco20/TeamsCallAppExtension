@@ -67,7 +67,7 @@ namespace TeamsCallApp
             RegisterHotKey(this.Handle, HOTKEY_ID, 0, (int)_currentHotkey);
         }
 
-            private void SetStartup(bool enable)
+        private void SetStartup(bool enable)
         {
             using (var key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run", true))
             {

@@ -1746,7 +1746,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D9C568918E054C81A50EEB042D3C142A"
             {
-            "SourcePath" = "8:..\\TeamsCallApp\\obj\\Release\\net8.0-windows\\TeamsCallApp.dll"
+            "SourcePath" = "8:..\\TeamsCallApp\\obj\\Debug\\net8.0-windows\\TeamsCallApp.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_788EE4F460E94B50A9880C3A016B770C"
