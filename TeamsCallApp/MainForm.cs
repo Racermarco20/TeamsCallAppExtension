@@ -107,7 +107,7 @@ namespace TeamsCallApp
         private static void HandleRightClick()
         {
             var selectedText = ClipboardHelper.GetSelectedText();
-            if (!string.IsNullOrEmpty(selectedText) && PhoneNumberValidator.IsPhoneNumber(selectedText))
+            if (!string.IsNullOrEmpty(selectedText))
             {
                 ContextMenuHelper.ShowContextMenu(selectedText);
             }

@@ -17,15 +17,10 @@ namespace TeamsCallApp
 
             _currentContextMenu = new ContextMenu();
             var callItem = new MenuItem { Header = "Call with Teams" };
-            callItem.Click += (sender, e) => CallWithTeams(phoneNumber);
+            callItem.Click += (sender, e) => new CaptureForm(phoneNumber).Show();
             _currentContextMenu.Items.Add(callItem);
 
             _currentContextMenu.IsOpen = true;
-        }
-
-        private static void CallWithTeams(string phoneNumber)
-        {
-            Process.Start(new ProcessStartInfo("tel:" + phoneNumber) { UseShellExecute = true });
         }
     }
 }
