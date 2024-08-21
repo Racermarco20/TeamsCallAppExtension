@@ -3,9 +3,9 @@
   <assemblyIdentity version="1.0.0.0" name="MyApplication.app"/>
 	<trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
 		<security>
-			<!--requestedPrivileges>
+			<requestedPrivileges>
 				<requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
-			</requestedPrivileges-->
+			</requestedPrivileges>
 		</security>
 	</trustInfo>
 
