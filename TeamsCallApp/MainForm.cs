@@ -198,5 +198,9 @@ namespace TeamsCallApp
             _isLoaded = true;
             MainForm_Resize(sender, e);
         }
+        private void OnExit(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

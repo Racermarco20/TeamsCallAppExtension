@@ -6,7 +6,7 @@ namespace TeamsCallApp
     {
         public static bool IsPhoneNumber(string text)
         {
-            return Regex.IsMatch(text, @"^\+?[1-9]\d{0,14}(\(\d+\))?\d+-?\d*$");
+            return Regex.IsMatch(text, @"^\+?[1-9]\d{0,14}\s?\d+(\(\d+\))?\d+-?\d*$");
         }
     }
 }
