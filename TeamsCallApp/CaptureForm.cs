@@ -20,7 +20,7 @@ namespace TeamsCallApp
                 MainForm.pNotifyIcon.ShowBalloonTip(2000, Program.APP_NAME, "Calling " + phoneNumber, ToolTipIcon.Info);
 
                 Process.Start(new ProcessStartInfo($"tel:{phoneNumber}") { UseShellExecute = true });
-                Close();
+                Close(); 
             }
             else
             {
