@@ -27,9 +27,13 @@ namespace TeamsCallApp
 
         public static void ShowContextMenu(string phoneNumber)
         {
-            if (_currentContextMenu != null && _currentContextMenu.Visible)
+            if (_currentContextMenu != null)
             {
-                _currentContextMenu.Close();
+                if (_currentContextMenu.Visible)
+                {
+                    _currentContextMenu.Close();
+                }
+                _currentContextMenu.Dispose();
                 _currentContextMenu = null;
             }
 

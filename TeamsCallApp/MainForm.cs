@@ -104,14 +104,29 @@ namespace TeamsCallApp
             return CallNextHookEx(_hookID, nCode, wParam, lParam);
         }
 
-        private static void HandleRightClick()
+        private static async void HandleRightClick()
         {
-            var selectedText = ClipboardHelper.GetSelectedText();
-            if (!string.IsNullOrEmpty(selectedText))
+            if (Application.OpenForms[0].InvokeRequired)
             {
-                ContextMenuHelper.ShowContextMenu(selectedText);
+                Application.OpenForms[0].BeginInvoke((Action)(async () =>
+                {
+                    var selectedText = await ClipboardHelper.GetSelectedTextAsync();
+                    if (!string.IsNullOrEmpty(selectedText))
+                    {
+                        ContextMenuHelper.ShowContextMenu(selectedText);
+                    }
+                }));
+            }
+            else
+            {
+                var selectedText = await ClipboardHelper.GetSelectedTextAsync();
+                if (!string.IsNullOrEmpty(selectedText))
+                {
+                    ContextMenuHelper.ShowContextMenu(selectedText);
+                }
             }
         }
+
 
         private void LoadSettings()
         {
@@ -136,9 +151,13 @@ namespace TeamsCallApp
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            UnregisterHotKey(this.Handle, HOTKEY_ID);
+            if (_hookID != IntPtr.Zero)
+            {
+                UnhookWindowsHookEx(_hookID);
+                _hookID = IntPtr.Zero;
+            }
+
             notifyIcon1.Visible = false;
-            UnhookWindowsHookEx(_hookID);
             base.OnFormClosing(e);
         }
 
@@ -146,16 +165,26 @@ namespace TeamsCallApp
         {
             if (m.Msg == WM_HOTKEY && m.WParam.ToInt32() == HOTKEY_ID)
             {
-                var selectedText = ClipboardHelper.GetSelectedText();
-                if (!string.IsNullOrEmpty(selectedText))
-                {
-                    var captureForm = new CaptureForm(selectedText);
-                    captureForm.Show();
-                }
+                _ = HandleHotkeyAsync();
             }
             else
             {
                 base.WndProc(ref m);
+            }
+        }
+
+
+        private async Task HandleHotkeyAsync()
+        {
+            string selectedText = await Task.Run(() => ClipboardHelper.GetSelectedTextAsync());
+
+            if (!string.IsNullOrEmpty(selectedText))
+            {
+                this.Invoke((Action)(() =>
+                {
+                    var captureForm = new CaptureForm(selectedText);
+                    captureForm.Show();
+                }));
             }
         }
 
@@ -200,6 +229,14 @@ namespace TeamsCallApp
         }
         private void OnExit(object sender, EventArgs e)
         {
+            // Unhook the mouse hook before exiting the application
+            if (_hookID != IntPtr.Zero)
+            {
+                UnhookWindowsHookEx(_hookID);
+                _hookID = IntPtr.Zero;
+            }
+
+            notifyIcon1.Visible = false;
             Application.Exit();
         }
     }
