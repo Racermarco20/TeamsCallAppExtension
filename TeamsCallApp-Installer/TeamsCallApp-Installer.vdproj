@@ -106,13 +106,19 @@
         "Entry"
         {
         "MsmKey" = "8:_41C3AFDD60002C075EE8533E17A9EA81"
+        "OwnerKey" = "8:_44BDDE4D231C4EDF84BC82580CE141BA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_41C3AFDD60002C075EE8533E17A9EA81"
         "OwnerKey" = "8:_F98D141EFB794E9F833D16777E5AD0ED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_41C3AFDD60002C075EE8533E17A9EA81"
-        "OwnerKey" = "8:_44BDDE4D231C4EDF84BC82580CE141BA"
+        "OwnerKey" = "8:_8F1599006B5648B69D513D074C0C7D70"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -123,8 +129,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_41C3AFDD60002C075EE8533E17A9EA81"
-        "OwnerKey" = "8:_8F1599006B5648B69D513D074C0C7D70"
+        "MsmKey" = "8:_4341D69C0A1545B8A6DB592D72D5DFBE"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -172,7 +178,19 @@
         "Entry"
         {
         "MsmKey" = "8:_53F32CE37047AD0E015CA46339BD1DEF"
+        "OwnerKey" = "8:_D357B0CB7307460289C686694A38CB17"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_53F32CE37047AD0E015CA46339BD1DEF"
         "OwnerKey" = "8:_7BDA33230BB446BC8ECAD3F8F2AEEC10"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_53F32CE37047AD0E015CA46339BD1DEF"
+        "OwnerKey" = "8:_7AAA07602D0D45FFAB16DE75D3A3689B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -195,26 +213,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_53F32CE37047AD0E015CA46339BD1DEF"
-        "OwnerKey" = "8:_7AAA07602D0D45FFAB16DE75D3A3689B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_53F32CE37047AD0E015CA46339BD1DEF"
-        "OwnerKey" = "8:_D357B0CB7307460289C686694A38CB17"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_60B9FBB37EFD5534F390A88A589F25CF"
-        "OwnerKey" = "8:_F98D141EFB794E9F833D16777E5AD0ED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_60B9FBB37EFD5534F390A88A589F25CF"
-        "OwnerKey" = "8:_FB534F2E806A4FC2A438922758E3127D"
+        "MsmKey" = "8:_5A19F6BD93684835AAC806CBB138BE1E"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -226,7 +226,13 @@
         "Entry"
         {
         "MsmKey" = "8:_60B9FBB37EFD5534F390A88A589F25CF"
-        "OwnerKey" = "8:_4352CD57E20344A39FD083FB13F833E9"
+        "OwnerKey" = "8:_FB534F2E806A4FC2A438922758E3127D"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_60B9FBB37EFD5534F390A88A589F25CF"
+        "OwnerKey" = "8:_F98D141EFB794E9F833D16777E5AD0ED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -239,12 +245,6 @@
         {
         "MsmKey" = "8:_60B9FBB37EFD5534F390A88A589F25CF"
         "OwnerKey" = "8:_B5EE7EE7410F48F9A25CE0410E243A0C"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_60B9FBB37EFD5534F390A88A589F25CF"
-        "OwnerKey" = "8:_38F9C8829C9D44A2B0274EF1ADA68C71"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -280,12 +280,6 @@
         "Entry"
         {
         "MsmKey" = "8:_60B9FBB37EFD5534F390A88A589F25CF"
-        "OwnerKey" = "8:_C942A359FD2001077495B9BE729C54B3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_60B9FBB37EFD5534F390A88A589F25CF"
         "OwnerKey" = "8:_63408B7BBBA03458897D9842AD42B0D9"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -297,14 +291,32 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_63408B7BBBA03458897D9842AD42B0D9"
-        "OwnerKey" = "8:_F98D141EFB794E9F833D16777E5AD0ED"
+        "MsmKey" = "8:_60B9FBB37EFD5534F390A88A589F25CF"
+        "OwnerKey" = "8:_C942A359FD2001077495B9BE729C54B3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_60B9FBB37EFD5534F390A88A589F25CF"
+        "OwnerKey" = "8:_4352CD57E20344A39FD083FB13F833E9"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_60B9FBB37EFD5534F390A88A589F25CF"
+        "OwnerKey" = "8:_38F9C8829C9D44A2B0274EF1ADA68C71"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_63408B7BBBA03458897D9842AD42B0D9"
         "OwnerKey" = "8:_C942A359FD2001077495B9BE729C54B3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_63408B7BBBA03458897D9842AD42B0D9"
+        "OwnerKey" = "8:_F98D141EFB794E9F833D16777E5AD0ED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -357,6 +369,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_816F9F67B9D84E04BE443952899D0FE2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_835C75AB949145CFA35663E6BC4A723D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -388,13 +406,13 @@
         "Entry"
         {
         "MsmKey" = "8:_8F1599006B5648B69D513D074C0C7D70"
-        "OwnerKey" = "8:_F98D141EFB794E9F833D16777E5AD0ED"
+        "OwnerKey" = "8:_C942A359FD2001077495B9BE729C54B3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_8F1599006B5648B69D513D074C0C7D70"
-        "OwnerKey" = "8:_C942A359FD2001077495B9BE729C54B3"
+        "OwnerKey" = "8:_F98D141EFB794E9F833D16777E5AD0ED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -430,13 +448,13 @@
         "Entry"
         {
         "MsmKey" = "8:_9CF85325CB0B092CD45B67F04A894862"
-        "OwnerKey" = "8:_8F1599006B5648B69D513D074C0C7D70"
+        "OwnerKey" = "8:_44BDDE4D231C4EDF84BC82580CE141BA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_9CF85325CB0B092CD45B67F04A894862"
-        "OwnerKey" = "8:_44BDDE4D231C4EDF84BC82580CE141BA"
+        "OwnerKey" = "8:_F98D141EFB794E9F833D16777E5AD0ED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -448,7 +466,7 @@
         "Entry"
         {
         "MsmKey" = "8:_9CF85325CB0B092CD45B67F04A894862"
-        "OwnerKey" = "8:_F98D141EFB794E9F833D16777E5AD0ED"
+        "OwnerKey" = "8:_8F1599006B5648B69D513D074C0C7D70"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -472,25 +490,25 @@
         "Entry"
         {
         "MsmKey" = "8:_A813ABD8030B7CDB46A343BA15AD2674"
-        "OwnerKey" = "8:_D357B0CB7307460289C686694A38CB17"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A813ABD8030B7CDB46A343BA15AD2674"
-        "OwnerKey" = "8:_179DF304C46B12409B8AB50E4DE18490"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A813ABD8030B7CDB46A343BA15AD2674"
         "OwnerKey" = "8:_30C651C4BDD154B0754BB7B224531A1C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_A813ABD8030B7CDB46A343BA15AD2674"
+        "OwnerKey" = "8:_D357B0CB7307460289C686694A38CB17"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A813ABD8030B7CDB46A343BA15AD2674"
         "OwnerKey" = "8:_7AAA07602D0D45FFAB16DE75D3A3689B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A813ABD8030B7CDB46A343BA15AD2674"
+        "OwnerKey" = "8:_179DF304C46B12409B8AB50E4DE18490"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -514,25 +532,13 @@
         "Entry"
         {
         "MsmKey" = "8:_C1957791B9C150A1C70E756B5372D72D"
-        "OwnerKey" = "8:_41C3AFDD60002C075EE8533E17A9EA81"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C1957791B9C150A1C70E756B5372D72D"
-        "OwnerKey" = "8:_9A066A970F864C33B797091814AD1262"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C1957791B9C150A1C70E756B5372D72D"
         "OwnerKey" = "8:_2571048D5B814548B53FBCF9788483EB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_C1957791B9C150A1C70E756B5372D72D"
-        "OwnerKey" = "8:_44BDDE4D231C4EDF84BC82580CE141BA"
+        "OwnerKey" = "8:_9A066A970F864C33B797091814AD1262"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -550,6 +556,12 @@
         "Entry"
         {
         "MsmKey" = "8:_C1957791B9C150A1C70E756B5372D72D"
+        "OwnerKey" = "8:_8F1599006B5648B69D513D074C0C7D70"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C1957791B9C150A1C70E756B5372D72D"
         "OwnerKey" = "8:_9CF85325CB0B092CD45B67F04A894862"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -562,13 +574,19 @@
         "Entry"
         {
         "MsmKey" = "8:_C1957791B9C150A1C70E756B5372D72D"
-        "OwnerKey" = "8:_8F1599006B5648B69D513D074C0C7D70"
+        "OwnerKey" = "8:_E6521ABB2C0ACDE424189A05F4713FA4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_C1957791B9C150A1C70E756B5372D72D"
-        "OwnerKey" = "8:_E6521ABB2C0ACDE424189A05F4713FA4"
+        "OwnerKey" = "8:_41C3AFDD60002C075EE8533E17A9EA81"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C1957791B9C150A1C70E756B5372D72D"
+        "OwnerKey" = "8:_44BDDE4D231C4EDF84BC82580CE141BA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -586,7 +604,7 @@
         "Entry"
         {
         "MsmKey" = "8:_C83B9B8493B18201853D4B821F36C74A"
-        "OwnerKey" = "8:_41C3AFDD60002C075EE8533E17A9EA81"
+        "OwnerKey" = "8:_2571048D5B814548B53FBCF9788483EB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -598,31 +616,19 @@
         "Entry"
         {
         "MsmKey" = "8:_C83B9B8493B18201853D4B821F36C74A"
-        "OwnerKey" = "8:_2571048D5B814548B53FBCF9788483EB"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C83B9B8493B18201853D4B821F36C74A"
-        "OwnerKey" = "8:_44BDDE4D231C4EDF84BC82580CE141BA"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_C83B9B8493B18201853D4B821F36C74A"
         "OwnerKey" = "8:_9389A594560B4AB498850F00E55ED4EF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_C83B9B8493B18201853D4B821F36C74A"
-        "OwnerKey" = "8:_2DCFAD900BE8492A8B567CA565C4A29B"
+        "OwnerKey" = "8:_73526ABB7F1846209047AC244B3F0F53"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_C83B9B8493B18201853D4B821F36C74A"
-        "OwnerKey" = "8:_73526ABB7F1846209047AC244B3F0F53"
+        "OwnerKey" = "8:_8F1599006B5648B69D513D074C0C7D70"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -640,13 +646,25 @@
         "Entry"
         {
         "MsmKey" = "8:_C83B9B8493B18201853D4B821F36C74A"
-        "OwnerKey" = "8:_8F1599006B5648B69D513D074C0C7D70"
+        "OwnerKey" = "8:_E6521ABB2C0ACDE424189A05F4713FA4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_C83B9B8493B18201853D4B821F36C74A"
-        "OwnerKey" = "8:_E6521ABB2C0ACDE424189A05F4713FA4"
+        "OwnerKey" = "8:_41C3AFDD60002C075EE8533E17A9EA81"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C83B9B8493B18201853D4B821F36C74A"
+        "OwnerKey" = "8:_44BDDE4D231C4EDF84BC82580CE141BA"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C83B9B8493B18201853D4B821F36C74A"
+        "OwnerKey" = "8:_2DCFAD900BE8492A8B567CA565C4A29B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -688,6 +706,12 @@
         "Entry"
         {
         "MsmKey" = "8:_DFDCF1CA33E50BD7157AB97DC6D47BA5"
+        "OwnerKey" = "8:_C942A359FD2001077495B9BE729C54B3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DFDCF1CA33E50BD7157AB97DC6D47BA5"
         "OwnerKey" = "8:_F98D141EFB794E9F833D16777E5AD0ED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -695,12 +719,6 @@
         {
         "MsmKey" = "8:_DFDCF1CA33E50BD7157AB97DC6D47BA5"
         "OwnerKey" = "8:_48A6282803464073B32B4E1055E77774"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DFDCF1CA33E50BD7157AB97DC6D47BA5"
-        "OwnerKey" = "8:_C942A359FD2001077495B9BE729C54B3"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -735,6 +753,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_E5912093A7CA420192AFAFE51849C5DF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E6521ABB2C0ACDE424189A05F4713FA4"
         "OwnerKey" = "8:_41C3AFDD60002C075EE8533E17A9EA81"
         "MsmSig" = "8:_UNDEFINED"
@@ -742,13 +766,13 @@
         "Entry"
         {
         "MsmKey" = "8:_E6521ABB2C0ACDE424189A05F4713FA4"
-        "OwnerKey" = "8:_9A066A970F864C33B797091814AD1262"
+        "OwnerKey" = "8:_F98D141EFB794E9F833D16777E5AD0ED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_E6521ABB2C0ACDE424189A05F4713FA4"
-        "OwnerKey" = "8:_44BDDE4D231C4EDF84BC82580CE141BA"
+        "OwnerKey" = "8:_9A066A970F864C33B797091814AD1262"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -772,7 +796,7 @@
         "Entry"
         {
         "MsmKey" = "8:_E6521ABB2C0ACDE424189A05F4713FA4"
-        "OwnerKey" = "8:_F98D141EFB794E9F833D16777E5AD0ED"
+        "OwnerKey" = "8:_8F1599006B5648B69D513D074C0C7D70"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -790,7 +814,7 @@
         "Entry"
         {
         "MsmKey" = "8:_E6521ABB2C0ACDE424189A05F4713FA4"
-        "OwnerKey" = "8:_8F1599006B5648B69D513D074C0C7D70"
+        "OwnerKey" = "8:_44BDDE4D231C4EDF84BC82580CE141BA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -832,6 +856,12 @@
         "Entry"
         {
         "MsmKey" = "8:_FC8B36D6E708F3370975B01F70BAAA89"
+        "OwnerKey" = "8:_2AAD76D6E1D14001A42A7A6D7DA94686"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_FC8B36D6E708F3370975B01F70BAAA89"
         "OwnerKey" = "8:_53F32CE37047AD0E015CA46339BD1DEF"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -843,26 +873,8 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_FC8B36D6E708F3370975B01F70BAAA89"
-        "OwnerKey" = "8:_2AAD76D6E1D14001A42A7A6D7DA94686"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_EC9C9DE51C235BA43F02A71F8D57D07D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_93DB7D33D11F436B908CDA0473D448A3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A8AEF22B9B2F44C09A355A46EB4E080D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -874,31 +886,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_6E564FE308163540ADE63BBCD52D325A"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_52C880A35538DA314F7A1792E9655E1E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A56FA8778368E33FF43F13CB5AA47613"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_650A18EC62133564E140A859936C6C15"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_93C2D13AFC363C0131DA2E429755ABD1"
+        "OwnerKey" = "8:_EFCAD275F952E3FDBE2F3F21BD5D46D2"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -910,7 +898,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EFCAD275F952E3FDBE2F3F21BD5D46D2"
+        "OwnerKey" = "8:_C31847841116DF682FFB21D2A2629971"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -922,25 +910,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8F13B7C140AFB209724605768FB87950"
+        "OwnerKey" = "8:_A8AEF22B9B2F44C09A355A46EB4E080D"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3CFAB9D25DCA4AAB8272D9A1C4282359"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7C7F51428D2D711EBC98E7A44A495567"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_8B647BD61711DB0DF4BFB8FF9F78D3EE"
+        "OwnerKey" = "8:_A56FA8778368E33FF43F13CB5AA47613"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -952,7 +928,55 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C31847841116DF682FFB21D2A2629971"
+        "OwnerKey" = "8:_93DB7D33D11F436B908CDA0473D448A3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_93C2D13AFC363C0131DA2E429755ABD1"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8F13B7C140AFB209724605768FB87950"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8B647BD61711DB0DF4BFB8FF9F78D3EE"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_7C7F51428D2D711EBC98E7A44A495567"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_6E564FE308163540ADE63BBCD52D325A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_650A18EC62133564E140A859936C6C15"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_52C880A35538DA314F7A1792E9655E1E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3CFAB9D25DCA4AAB8272D9A1C4282359"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -979,6 +1003,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -995,6 +1027,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -1041,11 +1081,6 @@
             "AssemblyAsmDisplayName" = "8:PhoneNumbers, Version=8.13.43.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_00FDB1EC8C1C478FB4C83F905F6F8241"
-                    {
-                    "Name" = "8:PhoneNumbers.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\PhoneNumbers.dll"
             "TargetName" = "8:"
@@ -1072,11 +1107,6 @@
             "AssemblyAsmDisplayName" = "8:Azure.Core.Experimental, Version=0.1.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_179DF304C46B12409B8AB50E4DE18490"
-                    {
-                    "Name" = "8:Azure.Core.Experimental.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Azure.Core.Experimental.dll"
             "TargetName" = "8:"
@@ -1134,11 +1164,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Serialization.Multipart, Version=1.1.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_22514F33922C45BBA30D980CD1617548"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Serialization.Multipart.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.Kiota.Serialization.Multipart.dll"
             "TargetName" = "8:"
@@ -1165,11 +1190,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.IdentityModel.JsonWebTokens, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_24579B12DBBC836C16DBE77CBE8CC13D"
-                    {
-                    "Name" = "8:Microsoft.IdentityModel.JsonWebTokens.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.IdentityModel.JsonWebTokens.dll"
             "TargetName" = "8:"
@@ -1196,11 +1216,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.IdentityModel.Tokens, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2571048D5B814548B53FBCF9788483EB"
-                    {
-                    "Name" = "8:Microsoft.IdentityModel.Tokens.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.IdentityModel.Tokens.dll"
             "TargetName" = "8:"
@@ -1227,11 +1242,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Serialization.Multipart, Version=1.1.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_25B6874EAEAF9567FB9A77C297E88DEE"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Serialization.Multipart.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.Kiota.Serialization.Multipart.dll"
             "TargetName" = "8:"
@@ -1258,11 +1268,6 @@
             "AssemblyAsmDisplayName" = "8:Azure.Identity, Version=1.13.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2AAD76D6E1D14001A42A7A6D7DA94686"
-                    {
-                    "Name" = "8:Azure.Identity.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Azure.Identity.dll"
             "TargetName" = "8:"
@@ -1289,11 +1294,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.IdentityModel.Logging, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_2DCFAD900BE8492A8B567CA565C4A29B"
-                    {
-                    "Name" = "8:Microsoft.IdentityModel.Logging.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.IdentityModel.Logging.dll"
             "TargetName" = "8:"
@@ -1320,11 +1320,6 @@
             "AssemblyAsmDisplayName" = "8:Azure.Core, Version=1.41.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_30C651C4BDD154B0754BB7B224531A1C"
-                    {
-                    "Name" = "8:Azure.Core.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Azure.Core.dll"
             "TargetName" = "8:"
@@ -1351,11 +1346,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Serialization.Json, Version=1.3.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_32A2B2C32DED088015AE64834C7789A8"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Serialization.Json.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.Kiota.Serialization.Json.dll"
             "TargetName" = "8:"
@@ -1382,11 +1372,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Identity.Client.Extensions.Msal, Version=4.62.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_37F61692734654BFB32471CB76C185FE"
-                    {
-                    "Name" = "8:Microsoft.Identity.Client.Extensions.Msal.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.Identity.Client.Extensions.Msal.dll"
             "TargetName" = "8:"
@@ -1413,11 +1398,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Authentication.Azure, Version=1.1.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_38F9C8829C9D44A2B0274EF1ADA68C71"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Authentication.Azure.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.Kiota.Authentication.Azure.dll"
             "TargetName" = "8:"
@@ -1475,11 +1455,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.IdentityModel.Protocols, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_41C3AFDD60002C075EE8533E17A9EA81"
-                    {
-                    "Name" = "8:Microsoft.IdentityModel.Protocols.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.IdentityModel.Protocols.dll"
             "TargetName" = "8:"
@@ -1499,6 +1474,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4341D69C0A1545B8A6DB592D72D5DFBE"
+            {
+            "SourcePath" = "8:..\\TeamsCallApp\\resources\\\\copy.png"
+            "TargetName" = "8:copy.png"
+            "Tag" = "8:"
+            "Folder" = "8:_5355C72258854BE2B136541F95CBF9FD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4352CD57E20344A39FD083FB13F833E9"
             {
             "AssemblyRegister" = "3:1"
@@ -1506,11 +1501,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Serialization.Json, Version=1.3.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_4352CD57E20344A39FD083FB13F833E9"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Serialization.Json.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.Kiota.Serialization.Json.dll"
             "TargetName" = "8:"
@@ -1537,11 +1527,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_44BDDE4D231C4EDF84BC82580CE141BA"
-                    {
-                    "Name" = "8:Microsoft.IdentityModel.Protocols.OpenIdConnect.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll"
             "TargetName" = "8:"
@@ -1568,11 +1553,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Graph, Version=5.56.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_48A6282803464073B32B4E1055E77774"
-                    {
-                    "Name" = "8:Microsoft.Graph.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.Graph.dll"
             "TargetName" = "8:"
@@ -1599,11 +1579,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.IdentityModel.Abstractions, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_4F4B62F3628E475992E058CAFC44F852"
-                    {
-                    "Name" = "8:Microsoft.IdentityModel.Abstractions.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.IdentityModel.Abstractions.dll"
             "TargetName" = "8:"
@@ -1630,11 +1605,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Serialization.Form, Version=1.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_505FDF0EB983CCC2702E54D7BCDD2557"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Serialization.Form.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.Kiota.Serialization.Form.dll"
             "TargetName" = "8:"
@@ -1692,11 +1662,6 @@
             "AssemblyAsmDisplayName" = "8:System.Memory.Data, Version=1.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_53F32CE37047AD0E015CA46339BD1DEF"
-                    {
-                    "Name" = "8:System.Memory.Data.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.Memory.Data.dll"
             "TargetName" = "8:"
@@ -1716,6 +1681,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5A19F6BD93684835AAC806CBB138BE1E"
+            {
+            "SourcePath" = "8:..\\TeamsCallApp\\resources\\\\cancel.png"
+            "TargetName" = "8:cancel.png"
+            "Tag" = "8:"
+            "Folder" = "8:_5355C72258854BE2B136541F95CBF9FD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_60B9FBB37EFD5534F390A88A589F25CF"
             {
             "AssemblyRegister" = "3:1"
@@ -1723,11 +1708,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Abstractions, Version=1.9.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_60B9FBB37EFD5534F390A88A589F25CF"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Abstractions.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.Kiota.Abstractions.dll"
             "TargetName" = "8:"
@@ -1754,11 +1734,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Http.HttpClientLibrary, Version=1.4.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_63408B7BBBA03458897D9842AD42B0D9"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Http.HttpClientLibrary.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.Kiota.Http.HttpClientLibrary.dll"
             "TargetName" = "8:"
@@ -1816,11 +1791,6 @@
             "AssemblyAsmDisplayName" = "8:System.Memory.Data, Version=1.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_6A1F2E2C1FAF4F8EBFF5E94A86429965"
-                    {
-                    "Name" = "8:System.Memory.Data.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\System.Memory.Data.dll"
             "TargetName" = "8:"
@@ -1878,11 +1848,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.IdentityModel.JsonWebTokens, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_73526ABB7F1846209047AC244B3F0F53"
-                    {
-                    "Name" = "8:Microsoft.IdentityModel.JsonWebTokens.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.IdentityModel.JsonWebTokens.dll"
             "TargetName" = "8:"
@@ -1909,11 +1874,6 @@
             "AssemblyAsmDisplayName" = "8:Azure.Core.Experimental, Version=0.1.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7AAA07602D0D45FFAB16DE75D3A3689B"
-                    {
-                    "Name" = "8:Azure.Core.Experimental.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Azure.Core.Experimental.dll"
             "TargetName" = "8:"
@@ -1940,11 +1900,6 @@
             "AssemblyAsmDisplayName" = "8:System.ClientModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_7BDA33230BB446BC8ECAD3F8F2AEEC10"
-                    {
-                    "Name" = "8:System.ClientModel.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\System.ClientModel.dll"
             "TargetName" = "8:"
@@ -1995,6 +1950,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_816F9F67B9D84E04BE443952899D0FE2"
+            {
+            "SourcePath" = "8:..\\TeamsCallApp\\resources\\\\phone.png"
+            "TargetName" = "8:phone.png"
+            "Tag" = "8:"
+            "Folder" = "8:_5355C72258854BE2B136541F95CBF9FD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_835C75AB949145CFA35663E6BC4A723D"
             {
             "AssemblyRegister" = "3:1"
@@ -2002,11 +1977,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_835C75AB949145CFA35663E6BC4A723D"
-                    {
-                    "Name" = "8:Microsoft.Bcl.AsyncInterfaces.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.Bcl.AsyncInterfaces.dll"
             "TargetName" = "8:"
@@ -2064,11 +2034,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Identity.Client, Version=4.63.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8E817505E009416284B4790DE0CE6DA7"
-                    {
-                    "Name" = "8:Microsoft.Identity.Client.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.Identity.Client.dll"
             "TargetName" = "8:"
@@ -2126,11 +2091,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_8F1599006B5648B69D513D074C0C7D70"
-                    {
-                    "Name" = "8:Microsoft.IdentityModel.Protocols.OpenIdConnect.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.IdentityModel.Protocols.OpenIdConnect.dll"
             "TargetName" = "8:"
@@ -2157,11 +2117,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.IdentityModel.Protocols, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9389A594560B4AB498850F00E55ED4EF"
-                    {
-                    "Name" = "8:Microsoft.IdentityModel.Protocols.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.IdentityModel.Protocols.dll"
             "TargetName" = "8:"
@@ -2219,11 +2174,6 @@
             "AssemblyAsmDisplayName" = "8:TeamsCallApp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_93DB7D33D11F436B908CDA0473D448A3"
-                    {
-                    "Name" = "8:TeamsCallApp.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\TeamsCallApp.dll"
             "TargetName" = "8:"
@@ -2250,11 +2200,6 @@
             "AssemblyAsmDisplayName" = "8:Std.UriTemplate, Version=0.0.57.0, Culture=neutral, PublicKeyToken=c118b0afb4598f9a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_94DCBFCFB6A54356A7A678B5ECBC4E6D"
-                    {
-                    "Name" = "8:Std.UriTemplate.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Std.UriTemplate.dll"
             "TargetName" = "8:"
@@ -2281,11 +2226,6 @@
             "AssemblyAsmDisplayName" = "8:System.IdentityModel.Tokens.Jwt, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9A066A970F864C33B797091814AD1262"
-                    {
-                    "Name" = "8:System.IdentityModel.Tokens.Jwt.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\System.IdentityModel.Tokens.Jwt.dll"
             "TargetName" = "8:"
@@ -2312,11 +2252,6 @@
             "AssemblyAsmDisplayName" = "8:System.IdentityModel.Tokens.Jwt, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_9CF85325CB0B092CD45B67F04A894862"
-                    {
-                    "Name" = "8:System.IdentityModel.Tokens.Jwt.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.IdentityModel.Tokens.Jwt.dll"
             "TargetName" = "8:"
@@ -2425,11 +2360,6 @@
             "AssemblyAsmDisplayName" = "8:System.ClientModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A813ABD8030B7CDB46A343BA15AD2674"
-                    {
-                    "Name" = "8:System.ClientModel.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:System.ClientModel.dll"
             "TargetName" = "8:"
@@ -2456,11 +2386,6 @@
             "AssemblyAsmDisplayName" = "8:Hardcodet.NotifyIcon.Wpf, Version=1.1.0.0, Culture=neutral, PublicKeyToken=682384a853a08aad, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A8AEF22B9B2F44C09A355A46EB4E080D"
-                    {
-                    "Name" = "8:Hardcodet.NotifyIcon.Wpf.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Hardcodet.NotifyIcon.Wpf.dll"
             "TargetName" = "8:"
@@ -2487,11 +2412,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Http.HttpClientLibrary, Version=1.4.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_B5EE7EE7410F48F9A25CE0410E243A0C"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Http.HttpClientLibrary.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.Kiota.Http.HttpClientLibrary.dll"
             "TargetName" = "8:"
@@ -2549,11 +2469,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.IdentityModel.Logging, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C1957791B9C150A1C70E756B5372D72D"
-                    {
-                    "Name" = "8:Microsoft.IdentityModel.Logging.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.IdentityModel.Logging.dll"
             "TargetName" = "8:"
@@ -2631,11 +2546,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.IdentityModel.Abstractions, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C83B9B8493B18201853D4B821F36C74A"
-                    {
-                    "Name" = "8:Microsoft.IdentityModel.Abstractions.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.IdentityModel.Abstractions.dll"
             "TargetName" = "8:"
@@ -2662,11 +2572,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Graph.Core, Version=3.1.12.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C942A359FD2001077495B9BE729C54B3"
-                    {
-                    "Name" = "8:Microsoft.Graph.Core.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.Graph.Core.dll"
             "TargetName" = "8:"
@@ -2693,11 +2598,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Serialization.Form, Version=1.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_C9B1FC8E74E041B9A214586A34E21A4B"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Serialization.Form.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.Kiota.Serialization.Form.dll"
             "TargetName" = "8:"
@@ -2744,11 +2644,6 @@
             "AssemblyAsmDisplayName" = "8:Azure.Core, Version=1.41.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_D357B0CB7307460289C686694A38CB17"
-                    {
-                    "Name" = "8:Azure.Core.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Azure.Core.dll"
             "TargetName" = "8:"
@@ -2775,11 +2670,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Identity.Client.Extensions.Msal, Version=4.62.0.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_DC3CB62615F44D6F8089609AC3D7892F"
-                    {
-                    "Name" = "8:Microsoft.Identity.Client.Extensions.Msal.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.Identity.Client.Extensions.Msal.dll"
             "TargetName" = "8:"
@@ -2806,11 +2696,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Authentication.Azure, Version=1.1.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_DFDCF1CA33E50BD7157AB97DC6D47BA5"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Authentication.Azure.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.Kiota.Authentication.Azure.dll"
             "TargetName" = "8:"
@@ -2837,11 +2722,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_DFE1323112AFE3824FFD380DAF51F2F9"
-                    {
-                    "Name" = "8:Microsoft.Bcl.AsyncInterfaces.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.Bcl.AsyncInterfaces.dll"
             "TargetName" = "8:"
@@ -2868,11 +2748,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Abstractions, Version=1.9.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_E37BC1D527D64808B8E34CD80778A6CA"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Abstractions.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.Kiota.Abstractions.dll"
             "TargetName" = "8:"
@@ -2899,11 +2774,6 @@
             "AssemblyAsmDisplayName" = "8:Std.UriTemplate, Version=0.0.57.0, Culture=neutral, PublicKeyToken=c118b0afb4598f9a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_E3EFA1C111DE61C83C064F08FD3EB3C7"
-                    {
-                    "Name" = "8:Std.UriTemplate.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Std.UriTemplate.dll"
             "TargetName" = "8:"
@@ -2930,11 +2800,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Serialization.Text, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_E4621320ED495BA503B1434AF4A8DD9B"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Serialization.Text.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.Kiota.Serialization.Text.dll"
             "TargetName" = "8:"
@@ -2954,6 +2819,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E5912093A7CA420192AFAFE51849C5DF"
+            {
+            "SourcePath" = "8:..\\TeamsCallApp\\resources\\\\icon.ico"
+            "TargetName" = "8:icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_5355C72258854BE2B136541F95CBF9FD"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E6521ABB2C0ACDE424189A05F4713FA4"
             {
             "AssemblyRegister" = "3:1"
@@ -2961,11 +2846,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.IdentityModel.Tokens, Version=7.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_E6521ABB2C0ACDE424189A05F4713FA4"
-                    {
-                    "Name" = "8:Microsoft.IdentityModel.Tokens.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:Microsoft.IdentityModel.Tokens.dll"
             "TargetName" = "8:"
@@ -3105,11 +2985,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Graph.Core, Version=3.1.12.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_F98D141EFB794E9F833D16777E5AD0ED"
-                    {
-                    "Name" = "8:Microsoft.Graph.Core.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.Graph.Core.dll"
             "TargetName" = "8:"
@@ -3136,11 +3011,6 @@
             "AssemblyAsmDisplayName" = "8:Microsoft.Kiota.Serialization.Text, Version=1.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_FB534F2E806A4FC2A438922758E3127D"
-                    {
-                    "Name" = "8:Microsoft.Kiota.Serialization.Text.dll"
-                    "Attributes" = "3:512"
-                    }
                 }
             "SourcePath" = "8:..\\TeamsCallApp\\bin\\Release\\net8.0-windows\\Microsoft.Kiota.Serialization.Text.dll"
             "TargetName" = "8:"
@@ -3218,6 +3088,17 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_5355C72258854BE2B136541F95CBF9FD"
+                    {
+                    "Name" = "8:resources"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_B12339AA24C74A5C863EBB8566EFA614"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{1525181F-901A-416C-8A58-119130FE478E}:_DEF71B069CC544B5963B1BFE3720DA07"
