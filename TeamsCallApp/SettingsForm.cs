@@ -5,9 +5,9 @@ namespace TeamsCallApp
 {
     public partial class SettingsForm : Form
     {
-        public Keys CaptureHotkey { get; private set; }
-        public bool StartWithWindows { get; private set; }
-        public string DefaultCallApp { get; private set; }
+        public Keys CaptureHotkey { get; private set; } = Keys.P;
+        public bool StartWithWindows { get; private set; } = false;
+        public string DefaultCallApp { get; private set; } = "tel:";
 
         public SettingsForm(Keys currentHotkey, bool startWithWindows, string callApp)
         {
