@@ -2,6 +2,10 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text.Json;
 using Microsoft.Win32;
+using System.Threading.Tasks;
+using System.Runtime;
+using System.Windows.Forms;
+using TeamsCallApp;
 
 namespace TeamsCallApp
 {
@@ -98,146 +102,181 @@ namespace TeamsCallApp
         {
             if (nCode >= 0 && wParam == (IntPtr)WM_RBUTTONDOWN)
             {
-                HandleRightClick();
+                Task.Run(() => HandleRightClickAsync());
             }
 
             return CallNextHookEx(_hookID, nCode, wParam, lParam);
         }
 
-        private static async void HandleRightClick()
+        private static async Task HandleRightClickAsync()
         {
-            if (Application.OpenForms[0].InvokeRequired)
+            // Get the main form
+            var form = Application.OpenForms.OfType<MainForm>().FirstOrDefault();
+            if (form != null)
             {
-                Application.OpenForms[0].BeginInvoke((Action)(async () =>
+                // Create a task completion source
+                var tcs = new TaskCompletionSource<object>();
+
+                // BeginInvoke to run code on the UI thread
+                form.BeginInvoke(new Action(async () =>
                 {
-                    var selectedText = await ClipboardHelper.GetSelectedTextAsync();
-                    if (!string.IsNullOrEmpty(selectedText))
+                    try
                     {
-                        ContextMenuHelper.ShowContextMenu(selectedText);
+                        var selectedText = await ClipboardHelper.GetSelectedTextAsync();
+                        if (!string.IsNullOrEmpty(selectedText))
+                        {
+                            ContextMenuHelper.ShowContextMenu(selectedText);
+                        }
+
+                        Clipboard.Clear();
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exceptions if necessary
+                        Debug.WriteLine($"Exception in HandleRightClickAsync: {ex.Message}");
+                    }
+                    finally
+                    {
+                        tcs.SetResult(null);
                     }
                 }));
-            }
-            else
-            {
-                var selectedText = await ClipboardHelper.GetSelectedTextAsync();
-                if (!string.IsNullOrEmpty(selectedText))
-                {
-                    ContextMenuHelper.ShowContextMenu(selectedText);
-                }
+
+                // Wait for the UI thread operation to complete
+                await tcs.Task;
             }
         }
 
 
-        private void LoadSettings()
+
+        private static async Task ProcessClipboardAsync()
+    {
+        try
         {
-            if (File.Exists(configPath))
-            {
-                _settings = JsonSerializer.Deserialize<AppSettings>(File.ReadAllText(configPath));
-                _currentHotkey = _settings.CaptureHotkey;
-                _startWithWindows = _settings.StartWithWindows;
-                _callAppUri = _settings.CallAppUri;
-            }
-        }
-
-        private void SaveSettings()
-        {
-            _settings.CaptureHotkey = _currentHotkey;
-            _settings.StartWithWindows = _startWithWindows;
-            _settings.CallAppUri = _callAppUri;
-
-            Directory.CreateDirectory(Path.GetDirectoryName(configPath));
-            File.WriteAllText(configPath, JsonSerializer.Serialize(_settings));
-        }
-
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-            if (_hookID != IntPtr.Zero)
-            {
-                UnhookWindowsHookEx(_hookID);
-                _hookID = IntPtr.Zero;
-            }
-
-            notifyIcon1.Visible = false;
-            base.OnFormClosing(e);
-        }
-
-        protected override void WndProc(ref Message m)
-        {
-            if (m.Msg == WM_HOTKEY && m.WParam.ToInt32() == HOTKEY_ID)
-            {
-                _ = HandleHotkeyAsync();
-            }
-            else
-            {
-                base.WndProc(ref m);
-            }
-        }
-
-
-        private async Task HandleHotkeyAsync()
-        {
-            string selectedText = await Task.Run(() => ClipboardHelper.GetSelectedTextAsync());
+            var selectedText = await ClipboardHelper.GetSelectedTextAsync();
 
             if (!string.IsNullOrEmpty(selectedText))
             {
-                this.Invoke((Action)(() =>
-                {
-                    var captureForm = new CaptureForm(selectedText);
-                    captureForm.Show();
-                }));
-            }
-        }
-
-        private void openSettingsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            using (var settingsForm = new SettingsForm(_currentHotkey, _startWithWindows, _callAppUri))
-            {
-                if (settingsForm.ShowDialog() == DialogResult.OK)
-                {
-                    UnregisterHotKey(this.Handle, HOTKEY_ID);
-                    _currentHotkey = settingsForm.CaptureHotkey;
-                    _startWithWindows = settingsForm.StartWithWindows;
-                    _callAppUri = settingsForm.DefaultCallApp;
-                    RegisterHotKey(this.Handle, HOTKEY_ID, 0, (int)_currentHotkey);
-                    SaveSettings();
-                }
-            }
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            notifyIcon1.Visible = false;
-            Application.Exit();
-        }
-
-        private void MainForm_Resize(object sender, EventArgs e)
-        {
-
-            if (_isLoaded && this.WindowState == FormWindowState.Minimized)
-            {
-                Hide();
-                notifyIcon1.ShowBalloonTip(1000, Program.APP_NAME, Program.APP_NAME + " has been minimized to tray!", ToolTipIcon.Info);
-                notifyIcon1.Visible = true;
-            }
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            _hookID = SetHook(_proc);
-            _isLoaded = true;
-            MainForm_Resize(sender, e);
-        }
-        private void OnExit(object sender, EventArgs e)
-        {
-            // Unhook the mouse hook before exiting the application
-            if (_hookID != IntPtr.Zero)
-            {
-                UnhookWindowsHookEx(_hookID);
-                _hookID = IntPtr.Zero;
+                ContextMenuHelper.ShowContextMenu(selectedText);
             }
 
-            notifyIcon1.Visible = false;
-            Application.Exit();
+            // Clear clipboard after processing
+            Clipboard.Clear();
         }
+        catch (Exception ex)
+        {
+            // Handle any exceptions that might occur
+            MessageBox.Show($"An error occurred: {ex.Message}");
+        }
+    }
+private void LoadSettings()
+{
+    if (File.Exists(configPath))
+    {
+        _settings = JsonSerializer.Deserialize<AppSettings>(File.ReadAllText(configPath));
+        _currentHotkey = _settings.CaptureHotkey;
+        _startWithWindows = _settings.StartWithWindows;
+        _callAppUri = _settings.CallAppUri;
+    }
+}
+
+private void SaveSettings()
+{
+    _settings.CaptureHotkey = _currentHotkey;
+    _settings.StartWithWindows = _startWithWindows;
+    _settings.CallAppUri = _callAppUri;
+
+    Directory.CreateDirectory(Path.GetDirectoryName(configPath));
+    File.WriteAllText(configPath, JsonSerializer.Serialize(_settings));
+}
+
+protected override void OnFormClosing(FormClosingEventArgs e)
+{
+    if (_hookID != IntPtr.Zero)
+    {
+        UnhookWindowsHookEx(_hookID);
+        _hookID = IntPtr.Zero;
+    }
+
+    notifyIcon1.Visible = false;
+    base.OnFormClosing(e);
+}
+
+protected override void WndProc(ref Message m)
+{
+    if (m.Msg == WM_HOTKEY && m.WParam.ToInt32() == HOTKEY_ID)
+    {
+        _ = HandleHotkeyAsync();
+    }
+    else
+    {
+        base.WndProc(ref m);
+    }
+}
+
+private async Task HandleHotkeyAsync()
+{
+    string selectedText = await ClipboardHelper.GetSelectedTextAsync();
+
+    if (!string.IsNullOrEmpty(selectedText))
+    {
+        this.Invoke((Action)(() =>
+        {
+            var captureForm = new CaptureForm(selectedText);
+            captureForm.Show();
+        }));
+    }
+}
+
+private void openSettingsToolStripMenuItem_Click(object sender, EventArgs e)
+{
+    using (var settingsForm = new SettingsForm(_currentHotkey, _startWithWindows, _callAppUri))
+    {
+        if (settingsForm.ShowDialog() == DialogResult.OK)
+        {
+            UnregisterHotKey(this.Handle, HOTKEY_ID);
+            _currentHotkey = settingsForm.CaptureHotkey;
+            _startWithWindows = settingsForm.StartWithWindows;
+            _callAppUri = settingsForm.DefaultCallApp;
+            RegisterHotKey(this.Handle, HOTKEY_ID, 0, (int)_currentHotkey);
+            SaveSettings();
+        }
+    }
+}
+
+private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+{
+    notifyIcon1.Visible = false;
+    Application.Exit();
+}
+
+private void MainForm_Resize(object sender, EventArgs e)
+{
+    if (_isLoaded && this.WindowState == FormWindowState.Minimized)
+    {
+        Hide();
+        notifyIcon1.ShowBalloonTip(1000, Program.APP_NAME, Program.APP_NAME + " has been minimized to tray!", ToolTipIcon.Info);
+        notifyIcon1.Visible = true;
+    }
+}
+
+private void MainForm_Load(object sender, EventArgs e)
+{
+    _hookID = SetHook(_proc);
+    _isLoaded = true;
+    MainForm_Resize(sender, e);
+}
+
+private void OnExit(object sender, EventArgs e)
+{
+    // Unhook the mouse hook before exiting the application
+    if (_hookID != IntPtr.Zero)
+    {
+        UnhookWindowsHookEx(_hookID);
+        _hookID = IntPtr.Zero;
+    }
+
+    notifyIcon1.Visible = false;
+    Application.Exit();
+}
     }
 }
