@@ -17,6 +17,11 @@ namespace TeamsCallApp
         {
             string selectedText = string.Empty;
 
+            keybd_event(VK_CONTROL, 0, 0, 0); // STRG drücken
+            keybd_event(VK_C, 0, 0, 0); // C drücken
+            keybd_event(VK_C, 0, 2, 0); // C loslassen
+            keybd_event(VK_CONTROL, 0, 2, 0); // STRG loslassen
+
             try
             {
                 for (int i = 0; i < 5; i++)
@@ -31,7 +36,6 @@ namespace TeamsCallApp
                     }
                     catch (ExternalException)
                     {
-                        // Warte kurz und versuche es erneut
                         await Task.Delay(50);
                     }
                 }

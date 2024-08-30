@@ -32,9 +32,9 @@ namespace TeamsCallApp
                 if (_currentContextMenu.Visible)
                 {
                     _currentContextMenu.Close();
+                    _currentContextMenu.Dispose();
+                    _currentContextMenu = null;
                 }
-                _currentContextMenu.Dispose();
-                _currentContextMenu = null;
             }
 
             _currentContextMenu = new ContextMenuStrip();
